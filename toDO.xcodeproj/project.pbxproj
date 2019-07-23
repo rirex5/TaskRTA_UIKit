@@ -66,8 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				3D6BA9E322E71F33006537EF /* AppDelegate.swift */,
-				3D6BA9E522E71F33006537EF /* CountdownViewController.swift */,
 				3DB8C4E822E72B7E0042DCC8 /* TimerSetViewController.swift */,
+				3D6BA9E522E71F33006537EF /* CountdownViewController.swift */,
 				3DB8C4EA22E72BEB0042DCC8 /* CompleteTaskViewController.swift */,
 				3D6BA9E722E71F33006537EF /* Main.storyboard */,
 				3D6BA9EA22E71F36006537EF /* Assets.xcassets */,

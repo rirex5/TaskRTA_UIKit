@@ -33,16 +33,16 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-4V-fba">
+                                        <rect key="frame" x="-2" y="41" width="338" height="31"/>
+                                    </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDr-wV-lj8">
-                                        <rect key="frame" x="0.0" y="41" width="334" height="30"/>
-                                        <state key="normal" title="完了"/>
+                                        <rect key="frame" x="0.0" y="71" width="334" height="30"/>
+                                        <state key="normal" title="FInish"/>
                                         <connections>
-                                            <action selector="completeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UDa-aQ-0BY"/>
+                                            <action selector="finishButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OrJ-qQ-LLG"/>
                                         </connections>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-4V-fba">
-                                        <rect key="frame" x="-2" y="71" width="338" height="31"/>
-                                    </slider>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -56,7 +56,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="countdonwLabel" destination="rly-TC-sYN" id="GG6-ST-ZMf"/>
+                        <outlet property="countdownLabel" destination="rly-TC-sYN" id="QDJ-Nw-533"/>
                         <outlet property="progressSlider" destination="z3c-4V-fba" id="6oV-nf-D2y"/>
                         <outlet property="taskNameLabel" destination="cOL-mp-WG7" id="m8I-Sj-0zQ"/>
                     </connections>
