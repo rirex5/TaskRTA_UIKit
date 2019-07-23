@@ -10,11 +10,19 @@ import UIKit
 
 class CountdonwViewController: UIViewController {
 
+    @IBOutlet weak var taskNameLabel: UILabel!
+    @IBOutlet weak var countdonwLabel: UILabel!
+    @IBOutlet weak var progressSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func completeButtonTapped(_ sender: Any) {
+    }
+    
+    
+    
 }
 

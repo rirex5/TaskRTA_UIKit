@@ -36,9 +36,12 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDr-wV-lj8">
                                         <rect key="frame" x="0.0" y="41" width="334" height="30"/>
                                         <state key="normal" title="完了"/>
+                                        <connections>
+                                            <action selector="completeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UDa-aQ-0BY"/>
+                                        </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-4V-fba">
-                                        <rect key="frame" x="-2" y="71" width="338" height="31"/>
+                                        <rect key="frame" x="-2" y="70" width="338" height="31"/>
                                     </slider>
                                 </subviews>
                             </stackView>
@@ -52,6 +55,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="countdonwLabel" destination="rly-TC-sYN" id="GG6-ST-ZMf"/>
+                        <outlet property="progressSlider" destination="z3c-4V-fba" id="6oV-nf-D2y"/>
+                        <outlet property="taskNameLabel" destination="cOL-mp-WG7" id="m8I-Sj-0zQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,6 +143,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dZ-E5-LvR">
                                         <rect key="frame" x="0.0" y="246" width="334" height="30"/>
                                         <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="startButtonTapped:" destination="Zx9-zt-hVW" eventType="touchUpInside" id="pwP-RV-YaB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -148,6 +159,10 @@
                         <viewLayoutGuide key="safeArea" id="i1V-Kd-PYg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="ItT-u4-wfo"/>
+                    <connections>
+                        <outlet property="countdownDatePicker" destination="AzX-2X-5Nr" id="OkQ-vB-81C"/>
+                        <outlet property="taskNameTextField" destination="3BT-xv-PyA" id="di8-kC-bhZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGN-Uu-RVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
