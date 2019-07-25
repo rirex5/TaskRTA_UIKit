@@ -1,5 +1,5 @@
 //
-//  TimerSetViewController.swift
+//  TopViewController.swift
 //  toDO
 //
 //  Created by Mercury on 2019/07/23.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class TimerSetViewController: UIViewController, UITextFieldDelegate {
+class TopViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var countdownDatePicker: UIDatePicker!
+    let topViewModel = TopViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

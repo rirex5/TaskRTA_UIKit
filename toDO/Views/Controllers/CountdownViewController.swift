@@ -14,10 +14,10 @@ class CountdownViewController: UIViewController {
     @IBOutlet weak var countdownLabel: UILabel!
     @IBOutlet weak var progressSlider: UISlider!
     
-    
-    private var taskName: String!
-    private var countdownTime: Int! // 単位：1分
-    private var countdownTimer: Timer!
+    var taskName: String!
+    var countdownTime: Int! // 単位：1秒
+    var countdownTimer: Timer!
+    let viewModel = CountdownViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +38,13 @@ class CountdownViewController: UIViewController {
         }
     }
     
-    func timeup() {
-        countdownTimer.invalidate()
-        // TODO:バイブレーション
-        
+    @IBAction func finishButtonTapped(_ sender: Any) {
+        taskFinish()
     }
     
     func updateCountdownTime() {
         let hour = Int(floor(Double(countdownTime) / 3600.0))
-        let minute = Int(floor(Double(countdownTime) / 60.0))
+        let minute = Int(floor(Double(countdownTime % 3600) / 60.0))
         let second = Int(countdownTime % 60)
         
         var outputTime = ""
@@ -58,8 +56,18 @@ class CountdownViewController: UIViewController {
         countdownLabel.text = outputTime
     }
     
-    @IBAction func finishButtonTapped(_ sender: Any) {
-        
+    func timeup() {
+        countdownTimer.invalidate()
+        let soundService = VibrationService.shared
+        soundService.startVibrate(times: 10)
+    }
+    
+    func taskFinish() {
+        countdownTimer.invalidate()
+        let progress = Int(progressSlider.value)
+        let task = Task(name: taskName, progress: progress)
+        viewModel.save(task: task)
+        dismiss(animated: true, completion: nil)
     }
     
     func setTaskName(taskName: String) {

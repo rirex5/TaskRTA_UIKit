@@ -7,17 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D41A50822E975BA002AB802 /* VibrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A50722E975BA002AB802 /* VibrationService.swift */; };
+		3D41A51922E99509002AB802 /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A51822E99509002AB802 /* TopViewModel.swift */; };
+		3D41A51C22E995C4002AB802 /* TaskRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A51B22E995C4002AB802 /* TaskRealm.swift */; };
+		3D41A51E22E996B4002AB802 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A51D22E996B4002AB802 /* Task.swift */; };
+		3D41A52022E9B8FF002AB802 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A51F22E9B8FF002AB802 /* TaskModel.swift */; };
+		3D41A52322E9CB51002AB802 /* CountdownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A52222E9CB51002AB802 /* CountdownViewModel.swift */; };
+		3D41A52522E9CC91002AB802 /* CompleteTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A52422E9CC91002AB802 /* CompleteTaskViewModel.swift */; };
 		3D6BA9E422E71F33006537EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6BA9E322E71F33006537EF /* AppDelegate.swift */; };
 		3D6BA9E622E71F33006537EF /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6BA9E522E71F33006537EF /* CountdownViewController.swift */; };
 		3D6BA9E922E71F33006537EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6BA9E722E71F33006537EF /* Main.storyboard */; };
 		3D6BA9EB22E71F36006537EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6BA9EA22E71F36006537EF /* Assets.xcassets */; };
 		3D6BA9EE22E71F36006537EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6BA9EC22E71F36006537EF /* LaunchScreen.storyboard */; };
-		3DB8C4E922E72B7E0042DCC8 /* TimerSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB8C4E822E72B7E0042DCC8 /* TimerSetViewController.swift */; };
+		3DB8C4E922E72B7E0042DCC8 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB8C4E822E72B7E0042DCC8 /* TopViewController.swift */; };
 		3DB8C4EB22E72BEB0042DCC8 /* CompleteTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB8C4EA22E72BEB0042DCC8 /* CompleteTaskViewController.swift */; };
 		6E1AA5E69C4BEAB66E751F62 /* Pods_toDO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580C5BB65CCAEF7F00B7E7D3 /* Pods_toDO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D41A50722E975BA002AB802 /* VibrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationService.swift; sourceTree = "<group>"; };
+		3D41A51822E99509002AB802 /* TopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
+		3D41A51B22E995C4002AB802 /* TaskRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRealm.swift; sourceTree = "<group>"; };
+		3D41A51D22E996B4002AB802 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		3D41A51F22E9B8FF002AB802 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		3D41A52222E9CB51002AB802 /* CountdownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewModel.swift; sourceTree = "<group>"; };
+		3D41A52422E9CC91002AB802 /* CompleteTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskViewModel.swift; sourceTree = "<group>"; };
 		3D6BA9E022E71F33006537EF /* toDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6BA9E322E71F33006537EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6BA9E522E71F33006537EF /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
@@ -25,7 +39,7 @@
 		3D6BA9EA22E71F36006537EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D6BA9ED22E71F36006537EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D6BA9EF22E71F36006537EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3DB8C4E822E72B7E0042DCC8 /* TimerSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetViewController.swift; sourceTree = "<group>"; };
+		3DB8C4E822E72B7E0042DCC8 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		3DB8C4EA22E72BEB0042DCC8 /* CompleteTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskViewController.swift; sourceTree = "<group>"; };
 		580C5BB65CCAEF7F00B7E7D3 /* Pods_toDO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toDO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB2B1C51B47945F02BEF6C4A /* Pods-toDO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toDO.debug.xcconfig"; path = "Target Support Files/Pods-toDO/Pods-toDO.debug.xcconfig"; sourceTree = "<group>"; };
@@ -44,6 +58,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D41A50522E97566002AB802 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3DB8C4E822E72B7E0042DCC8 /* TopViewController.swift */,
+				3D6BA9E522E71F33006537EF /* CountdownViewController.swift */,
+				3DB8C4EA22E72BEB0042DCC8 /* CompleteTaskViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3D41A50622E97571002AB802 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3D41A50722E975BA002AB802 /* VibrationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3D41A51422E99097002AB802 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D41A50522E97566002AB802 /* Controllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3D41A51722E99110002AB802 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3D41A51822E99509002AB802 /* TopViewModel.swift */,
+				3D41A52222E9CB51002AB802 /* CountdownViewModel.swift */,
+				3D41A52422E9CC91002AB802 /* CompleteTaskViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3D41A51A22E99594002AB802 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D41A52122E9C4CE002AB802 /* Entity */,
+				3D41A51F22E9B8FF002AB802 /* TaskModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3D41A52122E9C4CE002AB802 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3D41A51D22E996B4002AB802 /* Task.swift */,
+				3D41A51B22E995C4002AB802 /* TaskRealm.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		3D6BA9D722E71F33006537EF = {
 			isa = PBXGroup;
 			children = (
@@ -65,10 +133,11 @@
 		3D6BA9E222E71F33006537EF /* toDO */ = {
 			isa = PBXGroup;
 			children = (
+				3D41A51A22E99594002AB802 /* Models */,
+				3D41A51722E99110002AB802 /* ViewModels */,
+				3D41A51422E99097002AB802 /* Views */,
+				3D41A50622E97571002AB802 /* Services */,
 				3D6BA9E322E71F33006537EF /* AppDelegate.swift */,
-				3DB8C4E822E72B7E0042DCC8 /* TimerSetViewController.swift */,
-				3D6BA9E522E71F33006537EF /* CountdownViewController.swift */,
-				3DB8C4EA22E72BEB0042DCC8 /* CompleteTaskViewController.swift */,
 				3D6BA9E722E71F33006537EF /* Main.storyboard */,
 				3D6BA9EA22E71F36006537EF /* Assets.xcassets */,
 				3D6BA9EC22E71F36006537EF /* LaunchScreen.storyboard */,
@@ -209,10 +278,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D41A51E22E996B4002AB802 /* Task.swift in Sources */,
+				3D41A51C22E995C4002AB802 /* TaskRealm.swift in Sources */,
 				3DB8C4EB22E72BEB0042DCC8 /* CompleteTaskViewController.swift in Sources */,
+				3D41A50822E975BA002AB802 /* VibrationService.swift in Sources */,
 				3D6BA9E622E71F33006537EF /* CountdownViewController.swift in Sources */,
+				3D41A51922E99509002AB802 /* TopViewModel.swift in Sources */,
+				3D41A52322E9CB51002AB802 /* CountdownViewModel.swift in Sources */,
 				3D6BA9E422E71F33006537EF /* AppDelegate.swift in Sources */,
-				3DB8C4E922E72B7E0042DCC8 /* TimerSetViewController.swift in Sources */,
+				3D41A52022E9B8FF002AB802 /* TaskModel.swift in Sources */,
+				3DB8C4E922E72B7E0042DCC8 /* TopViewController.swift in Sources */,
+				3D41A52522E9CC91002AB802 /* CompleteTaskViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
