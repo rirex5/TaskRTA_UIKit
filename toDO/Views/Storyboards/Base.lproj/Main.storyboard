@@ -33,7 +33,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-4V-fba">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-4V-fba">
                                         <rect key="frame" x="-2" y="41" width="338" height="31"/>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDr-wV-lj8">
@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="1862" y="406"/>
         </scene>
-        <!--Item 2-->
+        <!--CompleteTask View Controller-->
         <scene sceneID="XUd-nW-0qZ">
             <objects>
-                <viewController id="hno-un-Ojs" customClass="CompleteTaskViewController" customModule="toDO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hno-un-Ojs" userLabel="CompleteTask View Controller" customClass="CompleteTaskViewController" customModule="toDO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="di8-db-xap">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,30 +76,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vxi-z0-GdQ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vvp-zI-6Wi">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vvp-zI-6Wi" id="70n-Ne-6XN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9x-pL-bcD">
-                                                    <rect key="frame" x="5" y="5" width="33.5" height="33.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="33.5" id="dCe-Yn-0hz"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="q9x-pL-bcD" firstAttribute="top" secondItem="70n-Ne-6XN" secondAttribute="top" constant="5" id="3Ob-08-8GA"/>
-                                                <constraint firstItem="q9x-pL-bcD" firstAttribute="leading" secondItem="70n-Ne-6XN" secondAttribute="leading" constant="5" id="Y2U-xq-nMt"/>
-                                                <constraint firstAttribute="bottom" secondItem="q9x-pL-bcD" secondAttribute="bottom" constant="5" id="zfz-XJ-9Wc"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hno-un-Ojs" id="rpx-du-g02"/>
+                                    <outlet property="delegate" destination="hno-un-Ojs" id="bdd-Em-rJj"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -111,16 +91,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U59-rV-kvv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="TpV-w9-E0v"/>
+                    <tabBarItem key="tabBarItem" title="完了タスク" id="TpV-w9-E0v"/>
+                    <connections>
+                        <outlet property="completeTaskTableView" destination="Vxi-z0-GdQ" id="eaq-ea-bLp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4m-e6-fnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="689.85507246376812" y="1147.7678571428571"/>
         </scene>
-        <!--Item 1-->
+        <!--RTA-->
         <scene sceneID="O2D-LT-ghx">
             <objects>
-                <viewController id="Zx9-zt-hVW" customClass="TimerSetViewController" customModule="toDO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zx9-zt-hVW" customClass="TopViewController" customModule="toDO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U1o-BA-sKV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +111,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dxw-PJ-Gly">
                                 <rect key="frame" x="40" y="310" width="334" height="276"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3BT-xv-PyA">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="タスク" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3BT-xv-PyA">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -158,7 +141,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i1V-Kd-PYg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ItT-u4-wfo"/>
+                    <tabBarItem key="tabBarItem" title="RTA" id="ItT-u4-wfo"/>
                     <connections>
                         <outlet property="countdownDatePicker" destination="AzX-2X-5Nr" id="OkQ-vB-81C"/>
                         <outlet property="taskNameTextField" destination="3BT-xv-PyA" id="di8-kC-bhZ"/>

@@ -11,7 +11,7 @@ import RealmSwift
 class TaskRealm: Object {
     
     @objc dynamic var taskName: String = ""
-    @objc dynamic var progress: Int = -1
+    @objc dynamic var progress: Float = -1
     
     func set(task: Task) {
         taskName = task.name

@@ -8,5 +8,5 @@
 
 struct Task {
     var name: String
-    var progress: Int
+    var progress: Float
 }

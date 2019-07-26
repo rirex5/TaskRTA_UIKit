@@ -14,6 +14,8 @@
 		3D41A52022E9B8FF002AB802 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A51F22E9B8FF002AB802 /* TaskModel.swift */; };
 		3D41A52322E9CB51002AB802 /* CountdownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A52222E9CB51002AB802 /* CountdownViewModel.swift */; };
 		3D41A52522E9CC91002AB802 /* CompleteTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A52422E9CC91002AB802 /* CompleteTaskViewModel.swift */; };
+		3D41A52C22EAD7DC002AB802 /* CompleteTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A52A22EAD7DC002AB802 /* CompleteTaskTableViewCell.swift */; };
+		3D41A52D22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D41A52B22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib */; };
 		3D6BA9E422E71F33006537EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6BA9E322E71F33006537EF /* AppDelegate.swift */; };
 		3D6BA9E622E71F33006537EF /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6BA9E522E71F33006537EF /* CountdownViewController.swift */; };
 		3D6BA9E922E71F33006537EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6BA9E722E71F33006537EF /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 		3D41A51F22E9B8FF002AB802 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		3D41A52222E9CB51002AB802 /* CountdownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewModel.swift; sourceTree = "<group>"; };
 		3D41A52422E9CC91002AB802 /* CompleteTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskViewModel.swift; sourceTree = "<group>"; };
+		3D41A52A22EAD7DC002AB802 /* CompleteTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskTableViewCell.swift; sourceTree = "<group>"; };
+		3D41A52B22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteTaskTableViewCell.xib; sourceTree = "<group>"; };
 		3D6BA9E022E71F33006537EF /* toDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6BA9E322E71F33006537EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6BA9E522E71F33006537EF /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		3D41A51422E99097002AB802 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D41A52722E9CE24002AB802 /* Storyboards */,
+				3D41A52622E9CE11002AB802 /* Cells */,
 				3D41A50522E97566002AB802 /* Controllers */,
 			);
 			path = Views;
@@ -97,19 +103,37 @@
 		3D41A51A22E99594002AB802 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3D41A52122E9C4CE002AB802 /* Entity */,
+				3D41A52122E9C4CE002AB802 /* Entities */,
 				3D41A51F22E9B8FF002AB802 /* TaskModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		3D41A52122E9C4CE002AB802 /* Entity */ = {
+		3D41A52122E9C4CE002AB802 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				3D41A51D22E996B4002AB802 /* Task.swift */,
 				3D41A51B22E995C4002AB802 /* TaskRealm.swift */,
 			);
-			path = Entity;
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		3D41A52622E9CE11002AB802 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D41A52A22EAD7DC002AB802 /* CompleteTaskTableViewCell.swift */,
+				3D41A52B22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3D41A52722E9CE24002AB802 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3D6BA9E722E71F33006537EF /* Main.storyboard */,
+				3D6BA9EC22E71F36006537EF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		3D6BA9D722E71F33006537EF = {
@@ -138,9 +162,7 @@
 				3D41A51422E99097002AB802 /* Views */,
 				3D41A50622E97571002AB802 /* Services */,
 				3D6BA9E322E71F33006537EF /* AppDelegate.swift */,
-				3D6BA9E722E71F33006537EF /* Main.storyboard */,
 				3D6BA9EA22E71F36006537EF /* Assets.xcassets */,
-				3D6BA9EC22E71F36006537EF /* LaunchScreen.storyboard */,
 				3D6BA9EF22E71F36006537EF /* Info.plist */,
 			);
 			path = toDO;
@@ -224,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6BA9EE22E71F36006537EF /* LaunchScreen.storyboard in Resources */,
+				3D41A52D22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib in Resources */,
 				3D6BA9EB22E71F36006537EF /* Assets.xcassets in Resources */,
 				3D6BA9E922E71F33006537EF /* Main.storyboard in Resources */,
 			);
@@ -283,6 +306,7 @@
 				3DB8C4EB22E72BEB0042DCC8 /* CompleteTaskViewController.swift in Sources */,
 				3D41A50822E975BA002AB802 /* VibrationService.swift in Sources */,
 				3D6BA9E622E71F33006537EF /* CountdownViewController.swift in Sources */,
+				3D41A52C22EAD7DC002AB802 /* CompleteTaskTableViewCell.swift in Sources */,
 				3D41A51922E99509002AB802 /* TopViewModel.swift in Sources */,
 				3D41A52322E9CB51002AB802 /* CountdownViewModel.swift in Sources */,
 				3D6BA9E422E71F33006537EF /* AppDelegate.swift in Sources */,
