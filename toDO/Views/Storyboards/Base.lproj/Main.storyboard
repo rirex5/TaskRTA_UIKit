@@ -19,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M1u-U9-Flh">
-                                <rect key="frame" x="40" y="128" width="334" height="276.5"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="276.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タスク名 -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOL-mp-WG7">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8Q-Ni-wnY" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="26.5" width="334" height="250"/>
+                                        <rect key="frame" x="0.0" y="26.5" width="414" height="250"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="ozr-KW-g2a"/>
@@ -70,15 +70,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="M1u-U9-Flh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="36C-Pp-X9X"/>
                             <constraint firstItem="bi5-B5-XeY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="4Fy-Dv-Xds"/>
+                            <constraint firstItem="M1u-U9-Flh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BKK-fu-9m3"/>
                             <constraint firstItem="PDr-wV-lj8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EYF-xU-rSL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PDr-wV-lj8" secondAttribute="bottom" id="HN8-Wo-nqc"/>
                             <constraint firstItem="PDr-wV-lj8" firstAttribute="top" secondItem="bi5-B5-XeY" secondAttribute="bottom" constant="20" id="L60-PB-aEP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M1u-U9-Flh" secondAttribute="trailing" id="OLS-wu-8vI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PDr-wV-lj8" secondAttribute="trailing" id="cQL-pV-hhP"/>
-                            <constraint firstItem="M1u-U9-Flh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="cjz-8A-pGi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bi5-B5-XeY" secondAttribute="trailing" constant="40" id="my4-AX-hmf"/>
-                            <constraint firstItem="M1u-U9-Flh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="ngB-Kc-caC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M1u-U9-Flh" secondAttribute="trailing" constant="40" id="sPV-Hh-p5S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

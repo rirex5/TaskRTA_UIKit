@@ -22,6 +22,7 @@ class CountdownViewController: UIViewController {
     var initialCountdownTime: Int!
     var countdownTimer: Timer!
     let viewModel = CountdownViewModel()
+    var touchProgressSliderFlag = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,20 @@ class CountdownViewController: UIViewController {
         taskNameLabel.text = taskName
         updateCountdownTime()
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CountdownViewController.timerUpdate), userInfo: nil, repeats: true)
+        
+        countdownPieChartView.usePercentValuesEnabled = false
+        countdownPieChartView.drawSlicesUnderHoleEnabled = false
+        countdownPieChartView.holeRadiusPercent = 0.6
+        countdownPieChartView.transparentCircleRadiusPercent = 0.1
+        countdownPieChartView.chartDescription?.enabled = false
+        countdownPieChartView.setExtraOffsets(left: 0, top: 0, right: 0, bottom: 0)
+        countdownPieChartView.chartDescription?.enabled = false
+        countdownPieChartView.rotationAngle = -90
+        countdownPieChartView.rotationEnabled = false
+        countdownPieChartView.highlightPerTapEnabled = false
+        countdownPieChartView.legend.enabled = false
+        countdownPieChartView.holeColor = .white
+        
     }
     
     @objc func timerUpdate() {
@@ -43,6 +58,7 @@ class CountdownViewController: UIViewController {
     }
     
     @IBAction func progressSliderChanged(_ sender: UISlider) {
+        touchProgressSliderFlag = true
         let progress = Int(sender.value * 100)
         progressRateLabel.text = "進捗 \(progress) %"
     }
@@ -63,29 +79,45 @@ class CountdownViewController: UIViewController {
             outputTime = String(format: "%02d:%02d:%02d", hour, minute, second)
         }
         print(outputTime)
-        countdownPieChartView.centerText = outputTime
+        
         // グラフに表示するデータのタイトルと値
         let value = Double(initialCountdownTime - countdownTime) * 100.0 / Double(initialCountdownTime)
             // Double(countdownTime / initialCountdownTime) * 100
 //        print(initialCountdownTime)
         print(value)
         let dataEntries = [
-        
-        
             PieChartDataEntry(value: value, label: ""),
             PieChartDataEntry(value: 100 - value, label: ""),
+            
 //            PieChartDataEntry(value: 25, label: "C")
         ]
         
         let dataSet = PieChartDataSet(entries: dataEntries, label: "")
+        dataSet.colors = [UIColor(red: 0.57, green: 0.68, blue: 0.35, alpha: 1), UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)]
+        
         // グラフの色
-        dataSet.colors = ChartColorTemplates.vordiplom()
+//        dataSet.colors = ChartColorTemplates.vordiplom()
         // グラフのデータの値の色
-        dataSet.valueTextColor = UIColor.black
+        dataSet.valueTextColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         // グラフのデータのタイトルの色
-        dataSet.entryLabelColor = UIColor.black
+        dataSet.entryLabelColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         
         self.countdownPieChartView.data = PieChartData(dataSet: dataSet)
+        
+        let paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        paragraphStyle.lineBreakMode = .byTruncatingTail
+        paragraphStyle.alignment = .center
+        
+        let centerText = NSMutableAttributedString(string: outputTime)
+        
+        centerText.setAttributes([.font : UIFont(name: "Futura", size: 22)!,
+                                  .paragraphStyle : paragraphStyle], range: NSRange(location: 0, length: centerText.length))
+        countdownPieChartView.centerAttributedText = centerText;
+        
+        if (touchProgressSliderFlag != true) {
+            progressSlider.value = Float(value / 100.0)
+            progressRateLabel.text = "進捗 \(Int(value)) %"
+        }
         
     }
     
