@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import Charts
 
 class CountdownViewController: UIViewController {
     
+    @IBOutlet weak var countdownPieChartView: PieChartView!
     @IBOutlet weak var taskNameLabel: UILabel!
-    @IBOutlet weak var countdownLabel: UILabel!
+    
     @IBOutlet weak var progressSlider: UISlider!
+    @IBOutlet weak var progressRateLabel: UILabel!
     
     var taskName: String!
     var countdownTime: Int! // 単位：1秒
+    var initialCountdownTime: Int!
     var countdownTimer: Timer!
     let viewModel = CountdownViewModel()
     
@@ -38,6 +42,11 @@ class CountdownViewController: UIViewController {
         }
     }
     
+    @IBAction func progressSliderChanged(_ sender: UISlider) {
+        let progress = Int(sender.value * 100)
+        progressRateLabel.text = "進捗 \(progress) %"
+    }
+    
     @IBAction func finishButtonTapped(_ sender: Any) {
         taskFinish()
     }
@@ -53,7 +62,31 @@ class CountdownViewController: UIViewController {
         } else {
             outputTime = String(format: "%02d:%02d:%02d", hour, minute, second)
         }
-        countdownLabel.text = outputTime
+        print(outputTime)
+        countdownPieChartView.centerText = outputTime
+        // グラフに表示するデータのタイトルと値
+        let value = Double(initialCountdownTime - countdownTime) * 100.0 / Double(initialCountdownTime)
+            // Double(countdownTime / initialCountdownTime) * 100
+//        print(initialCountdownTime)
+        print(value)
+        let dataEntries = [
+        
+        
+            PieChartDataEntry(value: value, label: ""),
+            PieChartDataEntry(value: 100 - value, label: ""),
+//            PieChartDataEntry(value: 25, label: "C")
+        ]
+        
+        let dataSet = PieChartDataSet(entries: dataEntries, label: "")
+        // グラフの色
+        dataSet.colors = ChartColorTemplates.vordiplom()
+        // グラフのデータの値の色
+        dataSet.valueTextColor = UIColor.black
+        // グラフのデータのタイトルの色
+        dataSet.entryLabelColor = UIColor.black
+        
+        self.countdownPieChartView.data = PieChartData(dataSet: dataSet)
+        
     }
     
     func timeup() {
@@ -76,6 +109,7 @@ class CountdownViewController: UIViewController {
     
     func setCountdownTime(timeMinutes: Int) {
         self.countdownTime = timeMinutes
+        self.initialCountdownTime = timeMinutes
     }
     
     
