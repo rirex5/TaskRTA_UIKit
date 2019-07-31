@@ -20,29 +20,34 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AER-sc-mKp">
-                        <rect key="frame" x="10" y="5" width="60" height="33.5"/>
+                        <rect key="frame" x="10" y="5.5" width="60" height="34"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="35m-pq-Ev5"/>
+                            <constraint firstAttribute="height" constant="34" id="HTn-Kd-x1d"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="LOb-gr-XUx"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タスク名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tP-xn-YCi">
-                        <rect key="frame" x="78" y="5" width="232" height="34"/>
+                        <rect key="frame" x="78" y="5.5" width="232" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="8QR-QO-b87"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="6tP-xn-YCi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="0TF-cX-t3v"/>
-                    <constraint firstAttribute="trailing" secondItem="6tP-xn-YCi" secondAttribute="trailing" constant="10" id="2kg-Tl-3N2"/>
                     <constraint firstItem="AER-sc-mKp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="HIH-z2-XwE"/>
+                    <constraint firstItem="6tP-xn-YCi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="MQI-b1-qb4"/>
                     <constraint firstAttribute="bottom" secondItem="AER-sc-mKp" secondAttribute="bottom" constant="5" id="S2r-cy-s1m"/>
-                    <constraint firstItem="6tP-xn-YCi" firstAttribute="leading" secondItem="AER-sc-mKp" secondAttribute="trailing" constant="8" id="bUr-Sg-HhK"/>
-                    <constraint firstAttribute="bottom" secondItem="6tP-xn-YCi" secondAttribute="bottom" constant="5" id="ewo-Y1-RPP"/>
+                    <constraint firstItem="6tP-xn-YCi" firstAttribute="leading" secondItem="AER-sc-mKp" secondAttribute="trailing" constant="8" id="WQb-hy-VxY"/>
+                    <constraint firstAttribute="trailing" secondItem="6tP-xn-YCi" secondAttribute="trailing" constant="10" id="dpx-H9-3Bn"/>
                     <constraint firstItem="AER-sc-mKp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="gTZ-9x-ZXi"/>
+                    <constraint firstAttribute="bottom" secondItem="6tP-xn-YCi" secondAttribute="bottom" constant="5" id="ine-wz-yqc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

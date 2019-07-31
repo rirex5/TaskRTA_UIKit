@@ -12,9 +12,11 @@ class TaskRealm: Object {
     
     @objc dynamic var taskName: String = ""
     @objc dynamic var progress: Float = -1
+    @objc dynamic var date: Date = Date(timeIntervalSince1970: 0)
     
     func set(task: Task) {
         taskName = task.name
         progress = task.progress
+        date = task.date
     }
 }

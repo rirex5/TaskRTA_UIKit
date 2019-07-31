@@ -130,7 +130,8 @@ class CountdownViewController: UIViewController {
     func taskFinish() {
         countdownTimer.invalidate()
         let progress = progressSlider.value
-        let task = Task(name: taskName, progress: progress)
+        let now = Date()
+        let task = Task(name: taskName, progress: progress, date: now)
         viewModel.save(task: task)
         dismiss(animated: true, completion: nil)
     }

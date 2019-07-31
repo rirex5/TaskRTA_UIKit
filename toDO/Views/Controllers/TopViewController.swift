@@ -16,6 +16,10 @@ class TopViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialization()
+    }
+    
+    func initialization() {
         taskNameTextField.delegate = self
     }
     

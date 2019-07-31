@@ -12,39 +12,67 @@ class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBOutlet weak var completeTaskTableView: UITableView!
     let viewModel = CompleteTaskViewModel()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        initialization()
-    }
+    var tasks: [[Task]] = [[]]
     
     override func viewWillAppear(_ animated: Bool) {
+        initialization()
         completeTaskTableView.reloadData()
     }
     
     func initialization() {
+        let taskAll = viewModel.readAll()
+        tasks = [[]]
+        var previousTask: Task?
+        var j = 0
+        for (i, task) in taskAll.enumerated() {
+            if (i == 0) {
+                tasks[j].append(task)
+            } else {
+                if (task.date.toStringOnlyDate() != previousTask?.date.toStringOnlyDate()) {
+                    j += 1
+                }
+                tasks[j].insert(task, at: 0)
+            }
+            previousTask = task
+        }
         completeTaskTableView.register(UINib(nibName: "CompleteTaskTableViewCell", bundle: nil), forCellReuseIdentifier: "CompleteTaskTableViewCell")
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let tasks = viewModel.readAll()
+    func numberOfSections(in tableView: UITableView) -> Int {
         return tasks.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let finishDate = tasks[section][0].date.toStringOnlyDate()
+        return finishDate
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks[section].count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tasks = viewModel.readAll()
         let cell = tableView.dequeueReusableCell(withIdentifier: "CompleteTaskTableViewCell") as! CompleteTaskTableViewCell
-        
-        let taskName = tasks[indexPath.row].name
-        let progressPercent = tasks[indexPath.row].progress * 100.0
-        
+        let taskName = tasks[indexPath.section][indexPath.row].name
+        let progressPercent = tasks[indexPath.section][indexPath.row].progress * 100.0
         cell.taskNameLabel.text = taskName
-        
         if (progressPercent > 99.0) {
             cell.progressLabel.text = "✔︎"
+            cell.progressLabel.font = UIFont.systemFont(ofSize: 30)
         } else {
-            cell.progressLabel.text = String(format: "%.1f", progressPercent) + " %"
+            cell.progressLabel.text = String(format: "%.0f", progressPercent) + " %"
+            cell.progressLabel.font = UIFont.systemFont(ofSize: 17)
         }
         return cell
+    }
+}
+
+extension Date {
+    func toStringOnlyDate() -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale.current
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: self)
     }
 }
