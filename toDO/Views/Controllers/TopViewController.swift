@@ -21,6 +21,7 @@ class TopViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func startButtonTapped(_ sender: Any) {
         if taskNameTextField.text != "" {
+            self.tabBarController?.selectedIndex = 1
             showCountdownView()
         } else {
             showAlart(title: "タスク名を入力してください", message: "")
