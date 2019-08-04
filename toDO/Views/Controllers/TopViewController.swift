@@ -9,7 +9,7 @@
 import UIKit
 
 class TopViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var countdownDatePicker: UIDatePicker!
     let topViewModel = TopViewModel()
@@ -57,7 +57,7 @@ class TopViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-
+    
     // To close keyboard by tap
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

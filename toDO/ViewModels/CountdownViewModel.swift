@@ -7,6 +7,7 @@
 //
 
 class CountdownViewModel {
+    
     let taskModel = TaskModel()
     
     func save(task: Task) {

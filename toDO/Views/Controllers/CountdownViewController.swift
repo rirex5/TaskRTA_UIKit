@@ -82,21 +82,16 @@ class CountdownViewController: UIViewController {
         
         // グラフに表示するデータのタイトルと値
         let value = Double(initialCountdownTime - countdownTime) * 100.0 / Double(initialCountdownTime)
-            // Double(countdownTime / initialCountdownTime) * 100
-//        print(initialCountdownTime)
-        print(value)
         let dataEntries = [
             PieChartDataEntry(value: value, label: ""),
             PieChartDataEntry(value: 100 - value, label: ""),
-            
-//            PieChartDataEntry(value: 25, label: "C")
         ]
         
         let dataSet = PieChartDataSet(entries: dataEntries, label: "")
         dataSet.colors = [UIColor(red: 0.57, green: 0.68, blue: 0.35, alpha: 1), UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)]
         
         // グラフの色
-//        dataSet.colors = ChartColorTemplates.vordiplom()
+        // dataSet.colors = ChartColorTemplates.vordiplom()
         // グラフのデータの値の色
         dataSet.valueTextColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         // グラフのデータのタイトルの色
@@ -146,8 +141,6 @@ class CountdownViewController: UIViewController {
         self.countdownTime = timeMinutes
         self.initialCountdownTime = timeMinutes
     }
-    
-    
     
 }
 

@@ -7,6 +7,7 @@
 //
 
 class CompleteTaskViewModel {
+    
     let taskModel = TaskModel()
     
     func save(task: Task) {
