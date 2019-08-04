@@ -10,8 +10,7 @@ import RealmSwift
 
 class TaskModel: Object {
     
-     var tasksResults: Results<TaskRealm>!
-    
+    var tasksResults: Results<TaskRealm>!
     // Save
     func save(task: Task) {
         let taskRealm = TaskRealm()
@@ -24,6 +23,17 @@ class TaskModel: Object {
         } catch {}
     }
     
+    // Delete
+    func delete(task: Task) {
+        do {
+            let realm = try Realm()
+            let taskRealm = realm.objects(TaskRealm.self).filter("uuid=%@", task.uuid).first!
+            try realm.write {
+                realm.delete(taskRealm)
+            }
+        } catch {}
+    }
+    
     // Read ALL
     func readAll() -> [Task] {
         var tasks: [Task] = []
@@ -31,11 +41,10 @@ class TaskModel: Object {
             let realm = try Realm()
             tasksResults = realm.objects(TaskRealm.self)
             for taskRealm in tasksResults {
-                let task = Task(name: taskRealm.taskName, progress: taskRealm.progress, date: taskRealm.date)
+                let task = Task(uuid: taskRealm.uuid, name: taskRealm.taskName, progress: taskRealm.progress, date: taskRealm.date)
                 tasks.append(task)
             }
         } catch {}
         return tasks
     }
-    
 }

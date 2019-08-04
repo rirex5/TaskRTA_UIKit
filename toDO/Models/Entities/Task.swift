@@ -8,7 +8,22 @@
 import Foundation
 
 struct Task {
+    var uuid: String
     var name: String
     var progress: Float
     var date: Date
+    
+    init(name: String, progress: Float, date: Date) {
+        self.uuid = NSUUID().uuidString
+        self.name = name
+        self.progress = progress
+        self.date = date
+    }
+    
+    init(uuid: String, name: String, progress: Float, date: Date) {
+        self.uuid = uuid
+        self.name = name
+        self.progress = progress
+        self.date = date
+    }
 }

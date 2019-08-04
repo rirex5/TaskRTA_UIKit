@@ -70,6 +70,23 @@ class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITable
         }
         return cell
     }
+    
+    //セルの編集許可
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    
+    //スワイプしたセルを削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            let task = tasks[indexPath.section][indexPath.row]
+            viewModel.delete(task: task)
+            tasks[indexPath.section].remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
+    
 }
 
 extension Date {

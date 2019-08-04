@@ -13,6 +13,10 @@ class CompleteTaskViewModel {
         taskModel.save(task: task)
     }
     
+    func delete(task: Task) {
+        taskModel.delete(task: task)
+    }
+    
     func readAll() -> [Task] {
         return taskModel.readAll()
     }
