@@ -29,12 +29,14 @@ class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITable
                 tasks[j].append(task)
             } else {
                 if (task.date.toStringOnlyDate() != previousTask?.date.toStringOnlyDate()) {
+                    tasks.append([])
                     j += 1
                 }
                 tasks[j].insert(task, at: 0)
             }
             previousTask = task
         }
+        tasks.reverse()
         completeTaskTableView.register(UINib(nibName: "CompleteTaskTableViewCell", bundle: nil), forCellReuseIdentifier: "CompleteTaskTableViewCell")
     }
     
