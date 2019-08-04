@@ -23,6 +23,10 @@ class VibrationService: NSObject {
         vibrateTimer = Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(VibrationService.timerUpdate), userInfo: nil, repeats: true)
     }
     
+    func stopVibrate() {
+        vibrateTimer.invalidate()
+    }
+    
     @objc private func timerUpdate() {
         vibrateCount -= 1
         if vibrateCount > 0 {

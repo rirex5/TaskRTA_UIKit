@@ -124,10 +124,12 @@ class CountdownViewController: UIViewController {
     func timeup() {
         countdownTimer.invalidate()
         let soundService = VibrationService.shared
-        soundService.startVibrate(times: 10)
+        soundService.startVibrate(times: 60)
     }
     
     func taskFinish() {
+        let soundService = VibrationService.shared
+        soundService.stopVibrate()
         countdownTimer.invalidate()
         let progress = progressSlider.value
         let now = Date()
