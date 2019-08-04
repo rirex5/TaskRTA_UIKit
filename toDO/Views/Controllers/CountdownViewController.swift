@@ -60,7 +60,7 @@ class CountdownViewController: UIViewController {
     @IBAction func progressSliderChanged(_ sender: UISlider) {
         touchProgressSliderFlag = true
         let progress = Int(sender.value * 100)
-        progressRateLabel.text = "進捗 \(progress) %"
+        progressRateLabel.text = "Progress \(progress) %"
     }
     
     @IBAction func finishButtonTapped(_ sender: Any) {
@@ -116,7 +116,7 @@ class CountdownViewController: UIViewController {
         
         if (touchProgressSliderFlag != true) {
             progressSlider.value = Float(value / 100.0)
-            progressRateLabel.text = "進捗 \(Int(value)) %"
+            progressRateLabel.text = "Progress \(Int(value)) %"
         }
         
     }

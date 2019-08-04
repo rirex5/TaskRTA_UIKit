@@ -16,6 +16,8 @@
 		3D41A52522E9CC91002AB802 /* CompleteTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A52422E9CC91002AB802 /* CompleteTaskViewModel.swift */; };
 		3D41A52C22EAD7DC002AB802 /* CompleteTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A52A22EAD7DC002AB802 /* CompleteTaskTableViewCell.swift */; };
 		3D41A52D22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D41A52B22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib */; };
+		3D50F8FD22F6D7E000A76FAD /* RTA-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D50F8FC22F6D7E000A76FAD /* RTA-32.png */; };
+		3D50F90022F6D81D00A76FAD /* Tasks-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D50F8FF22F6D81D00A76FAD /* Tasks-32.png */; };
 		3D6BA9E422E71F33006537EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6BA9E322E71F33006537EF /* AppDelegate.swift */; };
 		3D6BA9E622E71F33006537EF /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6BA9E522E71F33006537EF /* CountdownViewController.swift */; };
 		3D6BA9E922E71F33006537EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6BA9E722E71F33006537EF /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 		3D41A52422E9CC91002AB802 /* CompleteTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskViewModel.swift; sourceTree = "<group>"; };
 		3D41A52A22EAD7DC002AB802 /* CompleteTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskTableViewCell.swift; sourceTree = "<group>"; };
 		3D41A52B22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteTaskTableViewCell.xib; sourceTree = "<group>"; };
+		3D50F8FC22F6D7E000A76FAD /* RTA-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTA-32.png"; sourceTree = "<group>"; };
+		3D50F8FF22F6D81D00A76FAD /* Tasks-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tasks-32.png"; path = "../../../../../../../Downloads/Tasks-32.png"; sourceTree = "<group>"; };
 		3D6BA9E022E71F33006537EF /* toDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6BA9E322E71F33006537EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6BA9E522E71F33006537EF /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 		3DE32F7822F15AD300F48AA8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3D50F8FF22F6D81D00A76FAD /* Tasks-32.png */,
+				3D50F8FC22F6D7E000A76FAD /* RTA-32.png */,
 				3DE32F7922F15AE000F48AA8 /* Button.png */,
 			);
 			path = Images;
@@ -269,10 +275,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D50F90022F6D81D00A76FAD /* Tasks-32.png in Resources */,
 				3DE32F7A22F15AE000F48AA8 /* Button.png in Resources */,
 				3D6BA9EE22E71F36006537EF /* LaunchScreen.storyboard in Resources */,
 				3D41A52D22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib in Resources */,
 				3D6BA9EB22E71F36006537EF /* Assets.xcassets in Resources */,
+				3D50F8FD22F6D7E000A76FAD /* RTA-32.png in Resources */,
 				3D6BA9E922E71F33006537EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
