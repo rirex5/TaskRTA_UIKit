@@ -45,8 +45,11 @@ class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let finishDate = tasks[section][0].date.toStringOnlyDate()
-        return finishDate
+        if tasks[section].count != 0 {
+            let finishDate = tasks[section][0].date.toStringOnlyDate()
+            return finishDate
+        }
+        return ""
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
