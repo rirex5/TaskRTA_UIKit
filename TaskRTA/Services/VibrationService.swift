@@ -1,6 +1,6 @@
 //
 //  VibrationService.swift
-//  toDO
+//  TaskRTA
 //
 //  Created by Mercury on 2019/07/25.
 //  Copyright © 2019 Rirex. All rights reserved.
@@ -14,7 +14,7 @@ class VibrationService: NSObject {
     static let shared = VibrationService()
     private override init() {}
     
-    private var vibrateCount = 0
+    private var vibrateCount = -1
     private var vibrateTimer: Timer!
     
     func startVibrate(times: Int) {
@@ -24,7 +24,9 @@ class VibrationService: NSObject {
     }
     
     func stopVibrate() {
-        vibrateTimer.invalidate()
+        if vibrateCount == 0 {
+            vibrateTimer.invalidate()
+        }
     }
     
     @objc private func timerUpdate() {
@@ -33,6 +35,7 @@ class VibrationService: NSObject {
             playVibrate()
         } else {
             vibrateTimer.invalidate()
+            vibrateCount = -1
         }
     }
     

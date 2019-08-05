@@ -1,6 +1,6 @@
 //
 //  TopViewController.swift
-//  toDO
+//  TaskRTA
 //
 //  Created by Mercury on 2019/07/23.
 //  Copyright © 2019 Rirex. All rights reserved.
@@ -28,7 +28,7 @@ class TopViewController: UIViewController, UITextFieldDelegate {
             // self.tabBarController?.selectedIndex = 1
             showCountdownView()
         } else {
-            showAlart(title: "タスク名を入力してください", message: "")
+            showAlart(title: "Please enter task name", message: "")
         }
     }
     

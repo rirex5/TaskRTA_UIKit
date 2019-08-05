@@ -41,7 +41,7 @@
 		3D41A52B22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteTaskTableViewCell.xib; sourceTree = "<group>"; };
 		3D50F8FC22F6D7E000A76FAD /* RTA-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTA-32.png"; sourceTree = "<group>"; };
 		3D50F8FF22F6D81D00A76FAD /* Tasks-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tasks-32.png"; path = "../../../../../../../Downloads/Tasks-32.png"; sourceTree = "<group>"; };
-		3D6BA9E022E71F33006537EF /* toDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D6BA9E022E71F33006537EF /* TaskRTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskRTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6BA9E322E71F33006537EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6BA9E522E71F33006537EF /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 		3D6BA9E822E71F33006537EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 		3D6BA9D722E71F33006537EF = {
 			isa = PBXGroup;
 			children = (
-				3D6BA9E222E71F33006537EF /* toDO */,
+				3D6BA9E222E71F33006537EF /* TaskRTA */,
 				3D6BA9E122E71F33006537EF /* Products */,
 				6756AE6C21403CF0ECEF6472 /* Pods */,
 				B56A5511851E45928B712C12 /* Frameworks */,
@@ -155,12 +155,12 @@
 		3D6BA9E122E71F33006537EF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D6BA9E022E71F33006537EF /* toDO.app */,
+				3D6BA9E022E71F33006537EF /* TaskRTA.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3D6BA9E222E71F33006537EF /* toDO */ = {
+		3D6BA9E222E71F33006537EF /* TaskRTA */ = {
 			isa = PBXGroup;
 			children = (
 				3DE32F7722F15AC600F48AA8 /* Resources */,
@@ -172,7 +172,7 @@
 				3D6BA9EA22E71F36006537EF /* Assets.xcassets */,
 				3D6BA9EF22E71F36006537EF /* Info.plist */,
 			);
-			path = toDO;
+			path = TaskRTA;
 			sourceTree = "<group>";
 		};
 		3DE32F7722F15AC600F48AA8 /* Resources */ = {
@@ -213,9 +213,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3D6BA9DF22E71F33006537EF /* toDO */ = {
+		3D6BA9DF22E71F33006537EF /* TaskRTA */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D6BA9F222E71F36006537EF /* Build configuration list for PBXNativeTarget "toDO" */;
+			buildConfigurationList = 3D6BA9F222E71F36006537EF /* Build configuration list for PBXNativeTarget "TaskRTA" */;
 			buildPhases = (
 				ED79F0339E07CB20D46C282A /* [CP] Check Pods Manifest.lock */,
 				3D6BA9DC22E71F33006537EF /* Sources */,
@@ -227,9 +227,9 @@
 			);
 			dependencies = (
 			);
-			name = toDO;
+			name = TaskRTA;
 			productName = toDO;
-			productReference = 3D6BA9E022E71F33006537EF /* toDO.app */;
+			productReference = 3D6BA9E022E71F33006537EF /* TaskRTA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -252,7 +252,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3D6BA9DB22E71F33006537EF /* Build configuration list for PBXProject "toDO" */;
+			buildConfigurationList = 3D6BA9DB22E71F33006537EF /* Build configuration list for PBXProject "TaskRTA" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -265,7 +265,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3D6BA9DF22E71F33006537EF /* toDO */,
+				3D6BA9DF22E71F33006537EF /* TaskRTA */,
 			);
 		};
 /* End PBXProject section */
@@ -494,12 +494,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W9QV9753NK;
-				INFOPLIST_FILE = toDO/Info.plist;
+				INFOPLIST_FILE = TaskRTA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.rirex.toDO;
+				PRODUCT_BUNDLE_IDENTIFIER = net.rirex.taskrta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -513,12 +513,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W9QV9753NK;
-				INFOPLIST_FILE = toDO/Info.plist;
+				INFOPLIST_FILE = TaskRTA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.rirex.toDO;
+				PRODUCT_BUNDLE_IDENTIFIER = net.rirex.taskrta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -528,7 +528,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3D6BA9DB22E71F33006537EF /* Build configuration list for PBXProject "toDO" */ = {
+		3D6BA9DB22E71F33006537EF /* Build configuration list for PBXProject "TaskRTA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D6BA9F022E71F36006537EF /* Debug */,
@@ -537,7 +537,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D6BA9F222E71F36006537EF /* Build configuration list for PBXNativeTarget "toDO" */ = {
+		3D6BA9F222E71F36006537EF /* Build configuration list for PBXNativeTarget "TaskRTA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D6BA9F322E71F36006537EF /* Debug */,
