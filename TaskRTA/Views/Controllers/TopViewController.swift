@@ -21,6 +21,10 @@ class TopViewController: UIViewController, UITextFieldDelegate {
     
     func initialization() {
         taskNameTextField.delegate = self
+        self.parent?.title = "TaskRTA"
+        self.parent?.navigationController?.navigationBar.titleTextAttributes
+            = [NSAttributedString.Key.font: UIFont(name: "Futura", size: 20)!]
+
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
