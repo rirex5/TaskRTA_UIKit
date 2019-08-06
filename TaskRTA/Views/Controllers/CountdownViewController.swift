@@ -31,11 +31,11 @@ class CountdownViewController: UIViewController {
     }
     
     func initialization() {
+        self.navigationItem.hidesBackButton = true
         taskNameLabel.text = taskName
         startDate = Date()
         updateCountdownTime()
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CountdownViewController.timerUpdate), userInfo: nil, repeats: true)
-        
         countdownPieChartView.usePercentValuesEnabled = false
         countdownPieChartView.drawSlicesUnderHoleEnabled = false
         countdownPieChartView.holeRadiusPercent = 0.6
@@ -48,8 +48,6 @@ class CountdownViewController: UIViewController {
         countdownPieChartView.highlightPerTapEnabled = false
         countdownPieChartView.legend.enabled = false
         countdownPieChartView.holeColor = .white
-        
-        
     }
     
     @objc func timerUpdate() {
@@ -134,7 +132,8 @@ class CountdownViewController: UIViewController {
         let now = Date()
         let task = Task(name: taskName, progress: progress, startDate: startDate, finishDate: now)
         viewModel.save(task: task)
-        dismiss(animated: true, completion: nil)
+        // dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     func setTaskName(taskName: String) {

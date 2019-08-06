@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Countdown View Controller-->
+        <!--TaskRTA-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="CountdownView" id="BYZ-38-t0r" customClass="CountdownViewController" customModule="TaskRTA" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,7 +83,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bdE-99-MNc"/>
+                    <navigationItem key="navigationItem" title="TaskRTA" id="bdE-99-MNc"/>
                     <connections>
                         <outlet property="countdownPieChartView" destination="n8Q-Ni-wnY" id="6Ui-En-Dep"/>
                         <outlet property="progressRateLabel" destination="9H1-Io-83x" id="bGl-yK-mxM"/>
@@ -243,6 +243,7 @@
         <!--Navigation Controller-->
         <scene sceneID="TQp-6v-mGC">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Piw-1t-RVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="YfT-Ox-F5W" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bKl-FX-V8B">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -252,7 +253,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CqH-AE-Bmn"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Piw-1t-RVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1812" y="406"/>
         </scene>

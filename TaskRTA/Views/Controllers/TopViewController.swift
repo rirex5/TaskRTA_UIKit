@@ -48,9 +48,7 @@ class TopViewController: UIViewController, UITextFieldDelegate {
         let timeMinutes = Int(countdownDatePicker.countDownDuration)
         countdownViewController.setTaskName(taskName: taskName)
         countdownViewController.setCountdownTime(timeMinutes: timeMinutes)
-        // partial ページめくり的な，coverVertical 下から上がってくる，crossDissolve ふわっと入れ替わる，flipHorizontal 画面がクルッと180度回る
-        countdownViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve // アニメーション
-        self.present(countdownViewController, animated: true, completion: nil)
+        self.parent?.navigationController?.show(countdownViewController, sender: nil)
     }
     
     func showAlart(title: String, message: String) {
