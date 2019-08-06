@@ -12,7 +12,8 @@ class TaskRealm: Object {
     @objc dynamic var uuid: String = ""
     @objc dynamic var taskName: String = ""
     @objc dynamic var progress: Float = -1
-    @objc dynamic var date: Date = Date(timeIntervalSince1970: 0)
+    @objc dynamic var startDate: Date = Date(timeIntervalSince1970: 0)
+    @objc dynamic var finishDate: Date = Date(timeIntervalSince1970: 0)
     
     override static func primaryKey() -> String? {
         return "uuid"
@@ -22,7 +23,8 @@ class TaskRealm: Object {
         uuid = task.uuid
         taskName = task.name
         progress = task.progress
-        date = task.date
+        startDate = task.startDate
+        finishDate = task.finishDate
     }
     
 }

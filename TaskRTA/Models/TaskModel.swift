@@ -41,7 +41,7 @@ class TaskModel: Object {
             let realm = try Realm()
             tasksResults = realm.objects(TaskRealm.self)
             for taskRealm in tasksResults {
-                let task = Task(uuid: taskRealm.uuid, name: taskRealm.taskName, progress: taskRealm.progress, date: taskRealm.date)
+                let task = Task(uuid: taskRealm.uuid, name: taskRealm.taskName, progress: taskRealm.progress, startDate: taskRealm.startDate, finishDate: taskRealm.finishDate)
                 tasks.append(task)
             }
         } catch {}

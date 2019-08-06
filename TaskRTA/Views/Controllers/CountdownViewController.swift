@@ -20,6 +20,7 @@ class CountdownViewController: UIViewController {
     var taskName: String!
     var countdownTime: Int! // 単位：1秒
     var initialCountdownTime: Int!
+    var startDate: Date!
     var countdownTimer: Timer!
     let viewModel = CountdownViewModel()
     var touchProgressSliderFlag = false
@@ -31,6 +32,7 @@ class CountdownViewController: UIViewController {
     
     func initialization() {
         taskNameLabel.text = taskName
+        startDate = Date()
         updateCountdownTime()
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CountdownViewController.timerUpdate), userInfo: nil, repeats: true)
         
@@ -46,6 +48,7 @@ class CountdownViewController: UIViewController {
         countdownPieChartView.highlightPerTapEnabled = false
         countdownPieChartView.legend.enabled = false
         countdownPieChartView.holeColor = .white
+        
         
     }
     
@@ -81,6 +84,7 @@ class CountdownViewController: UIViewController {
         print(outputTime)
         
         // グラフに表示するデータのタイトルと値
+        // let initialCountdownTime = Int(Date().timeIntervalSince(startDate))
         let value = Double(initialCountdownTime - countdownTime) * 100.0 / Double(initialCountdownTime)
         let dataEntries = [
             PieChartDataEntry(value: value, label: ""),
@@ -128,7 +132,7 @@ class CountdownViewController: UIViewController {
         countdownTimer.invalidate()
         let progress = progressSlider.value
         let now = Date()
-        let task = Task(name: taskName, progress: progress, date: now)
+        let task = Task(name: taskName, progress: progress, startDate: startDate, finishDate: now)
         viewModel.save(task: task)
         dismiss(animated: true, completion: nil)
     }
