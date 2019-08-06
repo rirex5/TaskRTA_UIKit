@@ -45,6 +45,7 @@ class TaskModel: Object {
                 tasks.append(task)
             }
         } catch {}
+        tasks.sort { $0.finishDate < $1.finishDate }
         return tasks
     }
 }
