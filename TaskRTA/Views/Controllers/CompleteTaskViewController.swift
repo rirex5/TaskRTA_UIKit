@@ -60,7 +60,11 @@ class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "CompleteTaskTableViewCell") as! CompleteTaskTableViewCell
         let taskName = tasks[indexPath.section][indexPath.row].name
         let progressPercent = tasks[indexPath.section][indexPath.row].progress * 100.0
+        let startDate = tasks[indexPath.section][indexPath.row].startDate
+        let finishDate = tasks[indexPath.section][indexPath.row].finishDate
+        
         cell.taskNameLabel.text = taskName
+        
         if (progressPercent > 99.0) {
             cell.progressLabel.text = "✔︎"
             cell.progressLabel.font = UIFont.systemFont(ofSize: 30)
@@ -68,6 +72,9 @@ class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITable
             cell.progressLabel.text = String(format: "%.0f", progressPercent) + " %"
             cell.progressLabel.font = UIFont.systemFont(ofSize: 17)
         }
+        
+        cell.timeLabel.text = finishDate.timeIntervalSince(startDate).toStringDateFormat()
+        
         return cell
     }
     
@@ -87,6 +94,7 @@ class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+
 }
 
 extension Date {
@@ -98,3 +106,20 @@ extension Date {
         return formatter.string(from: self)
     }
 }
+
+extension TimeInterval {
+    func toStringDateFormat() -> String {
+        let time = Int(self)
+        let hour = Int(floor(Double(time) / 3600.0))
+        let minute = Int(floor(Double(time % 3600) / 60.0))
+        let second = Int(time % 60)
+        var outputTime = ""
+        if (hour == 0) {
+            outputTime = String(format: "%02d:%02d", minute, second)
+        } else {
+            outputTime = String(format: "%02d:%02d:%02d", hour, minute, second)
+        }
+        return outputTime
+    }
+}
+

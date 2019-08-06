@@ -12,6 +12,8 @@ class CompleteTaskTableViewCell: UITableViewCell {
 
     @IBOutlet weak var taskNameLabel: UILabel!
     @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
