@@ -22,8 +22,12 @@ class TopViewController: UIViewController, UITextFieldDelegate {
     func initialization() {
         taskNameTextField.delegate = self
         self.parent?.title = "TaskRTA"
+        self.parent?.navigationController?.navigationBar.barTintColor = UIColor(red: 0.59, green: 0.67, blue: 0.39, alpha: 1)
         self.parent?.navigationController?.navigationBar.titleTextAttributes
-            = [NSAttributedString.Key.font: UIFont(name: "Futura", size: 20)!]
+            = [
+                .foregroundColor: UIColor.white,
+                .font: UIFont(name: "Futura", size: 20)!
+        ]
 
     }
     
