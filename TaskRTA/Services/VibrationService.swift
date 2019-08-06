@@ -14,7 +14,7 @@ class VibrationService: NSObject {
     static let shared = VibrationService()
     private override init() {}
     
-    private var vibrateCount = -1
+    private var vibrateCount = 0
     private var vibrateTimer: Timer!
     
     func startVibrate(times: Int) {
@@ -24,9 +24,15 @@ class VibrationService: NSObject {
     }
     
     func stopVibrate() {
-        if vibrateCount == 0 {
+        print(vibrateCount)
+        
+        if (vibrateTimer != nil) {
             vibrateTimer.invalidate()
         }
+        
+        // if vibrateCount <= 0 {
+            
+        // }
     }
     
     @objc private func timerUpdate() {
@@ -35,7 +41,6 @@ class VibrationService: NSObject {
             playVibrate()
         } else {
             vibrateTimer.invalidate()
-            vibrateCount = -1
         }
     }
     
