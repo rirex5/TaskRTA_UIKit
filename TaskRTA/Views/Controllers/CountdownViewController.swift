@@ -91,13 +91,8 @@ class CountdownViewController: UIViewController {
         
         let dataSet = PieChartDataSet(entries: dataEntries, label: "")
         dataSet.colors = [UIColor(red: 0.57, green: 0.68, blue: 0.35, alpha: 1), UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)]
-        
-        // グラフの色
-        // dataSet.colors = ChartColorTemplates.vordiplom()
-        // グラフのデータの値の色
-        dataSet.valueTextColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-        // グラフのデータのタイトルの色
-        dataSet.entryLabelColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        dataSet.valueTextColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0) // グラフのデータの値の色
+        dataSet.entryLabelColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0) // グラフのデータのタイトルの色
         
         self.countdownPieChartView.data = PieChartData(dataSet: dataSet)
         
@@ -107,8 +102,13 @@ class CountdownViewController: UIViewController {
         
         let centerText = NSMutableAttributedString(string: outputTime)
         
-        centerText.setAttributes([.font : UIFont(name: "Futura", size: 22)!,
-                                  .paragraphStyle : paragraphStyle], range: NSRange(location: 0, length: centerText.length))
+        if (hour == 0) {
+            centerText.setAttributes([.font : UIFont(name: "Futura", size: 26)!,
+                                      .paragraphStyle : paragraphStyle], range: NSRange(location: 0, length: centerText.length))
+        } else {
+            centerText.setAttributes([.font : UIFont(name: "Futura", size: 22)!,
+                                      .paragraphStyle : paragraphStyle], range: NSRange(location: 0, length: centerText.length))
+        }
         countdownPieChartView.centerAttributedText = centerText;
         
         if (touchProgressSliderFlag != true) {
