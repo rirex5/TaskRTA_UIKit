@@ -18,24 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M1u-U9-Flh">
-                                <rect key="frame" x="0.0" y="128" width="414" height="279"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaskName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOL-mp-WG7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="29"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8Q-Ni-wnY" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="29" width="414" height="250"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="250" id="ozr-KW-g2a"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDr-wV-lj8">
                                 <rect key="frame" x="0.0" y="792" width="414" height="70"/>
                                 <color key="backgroundColor" red="0.59215686270000001" green="0.67450980390000004" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -68,18 +50,32 @@
                                 </subviews>
                                 <color key="tintColor" red="0.454217973" green="0.65507610100000002" blue="0.1192959738" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaskName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOL-mp-WG7">
+                                <rect key="frame" x="0.0" y="128" width="414" height="29"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8Q-Ni-wnY" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="177" width="414" height="358.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="M1u-U9-Flh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="36C-Pp-X9X"/>
                             <constraint firstItem="bi5-B5-XeY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="4Fy-Dv-Xds"/>
-                            <constraint firstItem="M1u-U9-Flh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BKK-fu-9m3"/>
                             <constraint firstItem="PDr-wV-lj8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EYF-xU-rSL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PDr-wV-lj8" secondAttribute="bottom" id="HN8-Wo-nqc"/>
+                            <constraint firstItem="n8Q-Ni-wnY" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="I9b-aF-TL0"/>
                             <constraint firstItem="PDr-wV-lj8" firstAttribute="top" secondItem="bi5-B5-XeY" secondAttribute="bottom" constant="20" id="L60-PB-aEP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M1u-U9-Flh" secondAttribute="trailing" id="OLS-wu-8vI"/>
+                            <constraint firstItem="n8Q-Ni-wnY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MG8-bT-8VA"/>
+                            <constraint firstItem="cOL-mp-WG7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TVj-WR-k2V"/>
+                            <constraint firstItem="cOL-mp-WG7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="ZCu-6D-hJB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PDr-wV-lj8" secondAttribute="trailing" id="cQL-pV-hhP"/>
+                            <constraint firstItem="n8Q-Ni-wnY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dnK-fN-XFJ"/>
+                            <constraint firstItem="n8Q-Ni-wnY" firstAttribute="top" secondItem="cOL-mp-WG7" secondAttribute="bottom" constant="20" id="gJE-Vt-aAy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bi5-B5-XeY" secondAttribute="trailing" constant="40" id="my4-AX-hmf"/>
+                            <constraint firstItem="cOL-mp-WG7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yv5-bN-xWX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -243,7 +239,6 @@
         <!--Navigation Controller-->
         <scene sceneID="TQp-6v-mGC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Piw-1t-RVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="YfT-Ox-F5W" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bKl-FX-V8B">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -253,6 +248,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CqH-AE-Bmn"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Piw-1t-RVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1812" y="406"/>
         </scene>
