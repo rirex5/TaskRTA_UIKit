@@ -58,8 +58,8 @@ class CountdownViewController: UIViewController {
     @objc func timerUpdate() {
         updateCountdownTime()
         let now = Date()
-        if Int(now.timeIntervalSince1970) == Int(task.targetDate.timeIntervalSince1970) {
-            timeup()
+        if Int(now.timeIntervalSince1970) - 1 == Int(task.targetDate.timeIntervalSince1970) {
+            VibrationService.shared.startVibrate(times: 5)
         }
     }
     
@@ -141,11 +141,6 @@ class CountdownViewController: UIViewController {
             progressSlider.value = Float(value / 100.0)
             progressRateLabel.text = "Progress \(Int(value)) %"
         }
-    }
-    
-    func timeup() {
-        let soundService = VibrationService.shared
-        soundService.startVibrate(times: 5)
     }
     
     func taskFinish() {
