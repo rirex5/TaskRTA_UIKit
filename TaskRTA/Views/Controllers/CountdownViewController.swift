@@ -58,7 +58,7 @@ class CountdownViewController: UIViewController {
     @objc func timerUpdate() {
         updateCountdownTime()
         let now = Date()
-        if now > task.targetDate {
+        if Int(now.timeIntervalSince1970) == Int(task.targetDate.timeIntervalSince1970) {
             timeup()
         }
     }
