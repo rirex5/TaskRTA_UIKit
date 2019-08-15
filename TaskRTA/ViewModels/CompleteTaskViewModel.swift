@@ -10,10 +10,6 @@ class CompleteTaskViewModel {
     
     let taskModel = TaskModel()
     
-    func save(task: Task) {
-        taskModel.save(task: task)
-    }
-    
     func delete(task: Task) {
         taskModel.delete(task: task)
     }

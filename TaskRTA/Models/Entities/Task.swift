@@ -12,22 +12,24 @@ struct Task {
     var name: String
     var progress: Float
     var startDate: Date
-    var finishDate: Date
+    var targetDate: Date
+    var finishDate: Date?
     
-    init(name: String, progress: Float, startDate: Date, finishDate: Date) {
+    init(name: String, progress: Float, startDate: Date, targetDate: Date, finishDate: Date?) {
         self.uuid = NSUUID().uuidString
         self.name = name
         self.progress = progress
         self.startDate = startDate
+        self.targetDate = targetDate
         self.finishDate = finishDate
-        
     }
     
-    init(uuid: String, name: String, progress: Float, startDate: Date, finishDate: Date) {
+    init(uuid: String, name: String, progress: Float, startDate: Date, targetDate: Date, finishDate: Date?) {
         self.uuid = uuid
         self.name = name
         self.progress = progress
         self.startDate = startDate
+        self.targetDate = targetDate
         self.finishDate = finishDate
     }
 }

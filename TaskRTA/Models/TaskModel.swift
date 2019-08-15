@@ -12,13 +12,17 @@ class TaskModel: Object {
     
     var tasksResults: Results<TaskRealm>!
     // Save
-    func save(task: Task) {
+    func save(task: Task, isUpdate: Bool) {
         let taskRealm = TaskRealm()
         taskRealm.set(task: task)
         do {
             let realm = try Realm()
             try realm.write {
-                realm.add(taskRealm)
+                if isUpdate {
+                    realm.add(taskRealm, update: .all)
+                } else {
+                    realm.add(taskRealm)
+                }
             }
         } catch {}
     }
@@ -41,11 +45,11 @@ class TaskModel: Object {
             let realm = try Realm()
             tasksResults = realm.objects(TaskRealm.self)
             for taskRealm in tasksResults {
-                let task = Task(uuid: taskRealm.uuid, name: taskRealm.taskName, progress: taskRealm.progress, startDate: taskRealm.startDate, finishDate: taskRealm.finishDate)
+                let task = Task(uuid: taskRealm.uuid, name: taskRealm.taskName, progress: taskRealm.progress, startDate: taskRealm.startDate,targetDate: taskRealm.targetDate, finishDate: taskRealm.finishDate)
                 tasks.append(task)
             }
         } catch {}
-        tasks.sort { $0.finishDate < $1.finishDate }
+        tasks.sort { $0.startDate < $1.startDate }
         return tasks
     }
 }

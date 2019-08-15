@@ -10,11 +10,16 @@ class CountdownViewModel {
     
     let taskModel = TaskModel()
     
-    func save(task: Task) {
-        taskModel.save(task: task)
+    func update(task: Task) {
+        taskModel.save(task: task, isUpdate: true)
     }
     
-    func readAll() -> [Task] {
-        return taskModel.readAll()
+    func readRunningTask() -> Task? {
+        if let latestTask = taskModel.readAll().last {
+            if latestTask.finishDate == nil {
+                return latestTask
+            }
+        }
+        return nil
     }
 }

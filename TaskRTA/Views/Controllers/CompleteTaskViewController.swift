@@ -28,7 +28,7 @@ class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITable
             if (i == 0) {
                 tasks[j].append(task)
             } else {
-                if (task.finishDate.toStringOnlyDate() != previousTask?.finishDate.toStringOnlyDate()) {
+                if (task.finishDate!.toStringOnlyDate() != previousTask?.finishDate!.toStringOnlyDate()) {
                     tasks.append([])
                     j += 1
                 }
@@ -46,7 +46,7 @@ class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if tasks[section].count != 0 {
-            let finishDate = tasks[section][0].finishDate.toStringOnlyDate()
+            let finishDate = tasks[section][0].finishDate!.toStringOnlyDate()
             return finishDate
         }
         return ""
@@ -73,7 +73,7 @@ class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITable
             cell.progressLabel.font = UIFont.systemFont(ofSize: 17)
         }
         
-        cell.timeLabel.text = finishDate.timeIntervalSince(startDate).toStringDateFormat()
+        cell.timeLabel.text = finishDate!.timeIntervalSince(startDate).toStringDateFormat()
         
         return cell
     }

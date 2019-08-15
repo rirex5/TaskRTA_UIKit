@@ -12,7 +12,7 @@ class TopViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var countdownDatePicker: UIDatePicker!
-    let topViewModel = TopViewModel()
+    let viewModel = TopViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,26 +28,32 @@ class TopViewController: UIViewController, UITextFieldDelegate {
                 .foregroundColor: UIColor.white,
                 .font: UIFont(name: "Futura", size: 20)!
         ]
-
+        if (viewModel.readRunningTask() != nil) {
+            showCountdownView()
+        }
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
         if taskNameTextField.text != "" {
-            // self.tabBarController?.selectedIndex = 1
+            makeTask()
             showCountdownView()
         } else {
             showAlart(title: "Please enter task name", message: "")
         }
     }
     
+    func makeTask() {
+        let taskName = taskNameTextField.text!
+        let timeMinutes = countdownDatePicker.countDownDuration
+        let now = Date()
+        let targetDate = Date(timeInterval: timeMinutes, since: now)
+        let task = Task(name: taskName, progress: 0, startDate: now, targetDate: targetDate, finishDate: nil)
+        viewModel.save(task: task)
+    }
+    
     func showCountdownView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let countdownViewController = storyboard.instantiateViewController(withIdentifier: "CountdownView") as! CountdownViewController
-        
-        let taskName = taskNameTextField.text!
-        let timeMinutes = Int(countdownDatePicker.countDownDuration)
-        countdownViewController.setTaskName(taskName: taskName)
-        countdownViewController.setCountdownTime(timeMinutes: timeMinutes)
         self.parent?.navigationController?.show(countdownViewController, sender: nil)
     }
     

@@ -11,10 +11,15 @@ class TopViewModel {
     let taskModel = TaskModel()
     
     func save(task: Task) {
-        taskModel.save(task: task)
+        taskModel.save(task: task, isUpdate: false)
     }
     
-    func readAll() -> [Task] {
-        return taskModel.readAll()
+    func readRunningTask() -> Task? {
+        if let latestTask = taskModel.readAll().last {
+            if latestTask.finishDate == nil {
+                return latestTask
+            }
+        }
+        return nil
     }
 }
