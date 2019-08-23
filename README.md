@@ -18,7 +18,7 @@ Using Library:
 - Realm Swift
 - Charts
 
-※You can installed by the cocoapods.
+※You can install this library by the cocoapods.
 
 
 
