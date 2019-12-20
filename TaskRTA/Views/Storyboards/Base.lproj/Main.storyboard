@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NQK-r7-rOh">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NQK-r7-rOh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -150,35 +148,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dxw-PJ-Gly">
-                                <rect key="frame" x="40" y="276.5" width="334" height="343"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyE-cu-I6h">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="26"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3BT-xv-PyA">
-                                        <rect key="frame" x="0.0" y="41" width="334" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgz-w1-coX">
-                                        <rect key="frame" x="0.0" y="86" width="334" height="26"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzX-2X-5Nr">
-                                        <rect key="frame" x="0.0" y="127" width="334" height="216"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="-31654799.380972981">
-                                            <!--1999-12-31 15:00:00 +0000-->
-                                        </date>
-                                    </datePicker>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dZ-E5-LvR">
                                 <rect key="frame" x="0.0" y="743" width="414" height="70"/>
                                 <color key="backgroundColor" red="0.59215686274509804" green="0.67450980392156867" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -193,14 +162,66 @@
                                     <action selector="startButtonTapped:" destination="Zx9-zt-hVW" eventType="touchUpInside" id="pwP-RV-YaB"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIy-OP-hVc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="655"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dxw-PJ-Gly">
+                                        <rect key="frame" x="20" y="111.5" width="374" height="432"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyE-cu-I6h">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="26"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3BT-xv-PyA">
+                                                <rect key="frame" x="0.0" y="41" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgz-w1-coX">
+                                                <rect key="frame" x="0.0" y="90" width="374" height="26"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzX-2X-5Nr">
+                                                <rect key="frame" x="0.0" y="131" width="374" height="216"/>
+                                                <connections>
+                                                    <action selector="countdownDatePickerChanged:" destination="Zx9-zt-hVW" eventType="valueChanged" id="lk1-4j-bGJ"/>
+                                                </connections>
+                                            </datePicker>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expected Finish Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTm-Ox-gDA">
+                                                <rect key="frame" x="0.0" y="362" width="374" height="26"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96I-lr-wcb">
+                                                <rect key="frame" x="0.0" y="403" width="374" height="29"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="dxw-PJ-Gly" firstAttribute="centerY" secondItem="QIy-OP-hVc" secondAttribute="centerY" id="HfS-yz-0OF"/>
+                                    <constraint firstAttribute="trailing" secondItem="dxw-PJ-Gly" secondAttribute="trailing" constant="20" id="bov-ec-PEa"/>
+                                    <constraint firstItem="dxw-PJ-Gly" firstAttribute="leading" secondItem="QIy-OP-hVc" secondAttribute="leading" constant="20" id="f9Z-Yc-0MC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="i1V-Kd-PYg" firstAttribute="trailing" secondItem="dxw-PJ-Gly" secondAttribute="trailing" constant="40" id="2gF-Sa-lmv"/>
-                            <constraint firstItem="dxw-PJ-Gly" firstAttribute="centerY" secondItem="U1o-BA-sKV" secondAttribute="centerY" id="6ae-Kt-taN"/>
+                            <constraint firstItem="QIy-OP-hVc" firstAttribute="leading" secondItem="i1V-Kd-PYg" secondAttribute="leading" id="Ec2-Ce-7ZH"/>
+                            <constraint firstItem="i1V-Kd-PYg" firstAttribute="trailing" secondItem="QIy-OP-hVc" secondAttribute="trailing" id="I8X-Id-bgM"/>
                             <constraint firstItem="i1V-Kd-PYg" firstAttribute="trailing" secondItem="8dZ-E5-LvR" secondAttribute="trailing" id="J4u-FZ-W10"/>
-                            <constraint firstItem="dxw-PJ-Gly" firstAttribute="leading" secondItem="i1V-Kd-PYg" secondAttribute="leading" constant="40" id="N6E-e0-aoZ"/>
                             <constraint firstItem="8dZ-E5-LvR" firstAttribute="leading" secondItem="i1V-Kd-PYg" secondAttribute="leading" id="PlN-id-Usr"/>
+                            <constraint firstItem="8dZ-E5-LvR" firstAttribute="top" secondItem="QIy-OP-hVc" secondAttribute="bottom" id="Tz9-OM-kGg"/>
+                            <constraint firstItem="QIy-OP-hVc" firstAttribute="top" secondItem="i1V-Kd-PYg" secondAttribute="top" id="VWo-Um-TsZ"/>
                             <constraint firstItem="8dZ-E5-LvR" firstAttribute="bottom" secondItem="i1V-Kd-PYg" secondAttribute="bottom" id="wmz-S9-25D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i1V-Kd-PYg"/>
@@ -210,12 +231,13 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="countdownDatePicker" destination="AzX-2X-5Nr" id="OkQ-vB-81C"/>
+                        <outlet property="finishTimeLabel" destination="96I-lr-wcb" id="3xd-rc-1u8"/>
                         <outlet property="taskNameTextField" destination="3BT-xv-PyA" id="di8-kC-bhZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGN-Uu-RVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="689.85507246376812" y="406.47321428571428"/>
+            <point key="canvasLocation" x="688.40579710144937" y="406.47321428571428"/>
         </scene>
         <!--TaskRTA-->
         <scene sceneID="I4U-cU-QVW">

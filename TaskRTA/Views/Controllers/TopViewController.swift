@@ -12,6 +12,8 @@ class TopViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var countdownDatePicker: UIDatePicker!
+    @IBOutlet weak var finishTimeLabel: UILabel!
+    
     let viewModel = TopViewModel()
     
     override func viewDidLoad() {
@@ -31,6 +33,16 @@ class TopViewController: UIViewController, UITextFieldDelegate {
         if (viewModel.readRunningTask() != nil) {
             showCountdownView()
         }
+    }
+    
+    @IBAction func countdownDatePickerChanged(_ sender: Any) {
+        var date = Date()
+        let timeInterval = countdownDatePicker.countDownDuration
+        date.addTimeInterval(timeInterval)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        finishTimeLabel.text = formatter.string(from: date)
+        print(date)
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {

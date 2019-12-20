@@ -25,3 +25,4 @@ GoogleService-Info.plist
 
 # opencv
 */opencv2.framework/*
+*.mobileprovision
