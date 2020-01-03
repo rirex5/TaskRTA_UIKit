@@ -21,6 +21,7 @@ class CountdownViewController: UIViewController {
     var countdownTimer: Timer!
     let viewModel = CountdownViewModel()
     var touchProgressSliderFlag = false
+    let uiFeedBack = UIFeedbackService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +70,12 @@ class CountdownViewController: UIViewController {
         progressRateLabel.text = "Progress \(progress) %"
     }
     
+    @IBAction func finishButtonTouchDown(_ sender: Any) {
+        uiFeedBack.impact(style: .medium)
+    }
+    
     @IBAction func finishButtonTapped(_ sender: Any) {
+        uiFeedBack.impact(style: .light)
         taskFinish()
     }
     

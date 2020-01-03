@@ -15,6 +15,7 @@ class TopViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var finishTimeLabel: UILabel!
     
     let viewModel = TopViewModel()
+    let uiFeedBack = UIFeedbackService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,6 @@ class TopViewController: UIViewController, UITextFieldDelegate {
     }
     
     func initialization() {
-        taskNameTextField.delegate = self
         self.parent?.title = "TaskRTA"
         self.parent?.navigationController?.navigationBar.barTintColor = UIColor(red: 0.59, green: 0.67, blue: 0.39, alpha: 1)
         self.parent?.navigationController?.navigationBar.titleTextAttributes
@@ -30,6 +30,8 @@ class TopViewController: UIViewController, UITextFieldDelegate {
                 .foregroundColor: UIColor.white,
                 .font: UIFont(name: "Futura", size: 20)!
         ]
+        taskNameTextField.delegate = self
+        taskNameTextField.becomeFirstResponder() // キーボードを開く
         if (viewModel.readRunningTask() != nil) {
             showCountdownView()
         }
@@ -45,7 +47,12 @@ class TopViewController: UIViewController, UITextFieldDelegate {
         print(date)
     }
     
+    @IBAction func startButtonTouchDown(_ sender: Any) {
+        uiFeedBack.impact(style: .medium)
+    }
+    
     @IBAction func startButtonTapped(_ sender: Any) {
+        uiFeedBack.impact(style: .light)
         if taskNameTextField.text != "" {
             makeTask()
             showCountdownView()
