@@ -2,7 +2,7 @@
 //  Task.swift
 //  TaskRTA
 //
-//  Created by Mercury on 2019/07/25.
+//  Created by Atsushi Otsubo on 2019/07/25.
 //  Copyright © 2019 Rirex. All rights reserved.
 //
 import Foundation

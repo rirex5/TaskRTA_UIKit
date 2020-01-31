@@ -2,7 +2,7 @@
 //  UIFeedbackService.swift
 //  TaskRTA
 //
-//  Created by Mercury on 2020/01/03.
+//  Created by Atsushi Otsubo on 2020/01/03.
 //  Copyright © 2020 Rirex. All rights reserved.
 //
 

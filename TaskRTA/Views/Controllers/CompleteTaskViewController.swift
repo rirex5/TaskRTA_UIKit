@@ -2,13 +2,13 @@
 //  CompleteTaskViewController.swift
 //  TaskRTA
 //
-//  Created by Mercury on 2019/07/23.
+//  Created by Atsushi Otsubo on 2019/07/23.
 //  Copyright © 2019 Rirex. All rights reserved.
 //
 
 import UIKit
 
-class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CompleteTaskViewController: CommonViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var completeTaskTableView: UITableView!
     let presenter = CompleteTaskPresenter()

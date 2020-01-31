@@ -2,7 +2,7 @@
 //  CompleteTaskTableViewCell.swift
 //  TaskRTA
 //
-//  Created by Mercury on 2019/07/26.
+//  Created by Atsushi Otsubo on 2019/07/26.
 //  Copyright © 2019 Rirex. All rights reserved.
 //
 

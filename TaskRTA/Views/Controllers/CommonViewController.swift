@@ -2,7 +2,7 @@
 //  CommonViewController.swift
 //  TaskRTA
 //
-//  Created by Mercury on 2020/02/01.
+//  Created by Atsushi Otsubo on 2020/02/01.
 //  Copyright © 2020 Rirex. All rights reserved.
 //
 

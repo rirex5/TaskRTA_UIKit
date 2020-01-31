@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3D41A50822E975BA002AB802 /* VibrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A50722E975BA002AB802 /* VibrationService.swift */; };
-		3D41A51922E99509002AB802 /* TopViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A51822E99509002AB802 /* TopViewPresenter.swift */; };
+		3D41A51922E99509002AB802 /* TopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A51822E99509002AB802 /* TopPresenter.swift */; };
 		3D41A51C22E995C4002AB802 /* TaskRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A51B22E995C4002AB802 /* TaskRealm.swift */; };
 		3D41A51E22E996B4002AB802 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A51D22E996B4002AB802 /* Task.swift */; };
 		3D41A52022E9B8FF002AB802 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A51F22E9B8FF002AB802 /* TaskModel.swift */; };
-		3D41A52322E9CB51002AB802 /* CountdownViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A52222E9CB51002AB802 /* CountdownViewPresenter.swift */; };
+		3D41A52322E9CB51002AB802 /* CountdownPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A52222E9CB51002AB802 /* CountdownPresenter.swift */; };
 		3D41A52522E9CC91002AB802 /* CompleteTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A52422E9CC91002AB802 /* CompleteTaskPresenter.swift */; };
 		3D41A52C22EAD7DC002AB802 /* CompleteTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A52A22EAD7DC002AB802 /* CompleteTaskTableViewCell.swift */; };
 		3D41A52D22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D41A52B22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib */; };
@@ -32,11 +32,11 @@
 
 /* Begin PBXFileReference section */
 		3D41A50722E975BA002AB802 /* VibrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationService.swift; sourceTree = "<group>"; };
-		3D41A51822E99509002AB802 /* TopViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewPresenter.swift; sourceTree = "<group>"; };
+		3D41A51822E99509002AB802 /* TopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPresenter.swift; sourceTree = "<group>"; };
 		3D41A51B22E995C4002AB802 /* TaskRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRealm.swift; sourceTree = "<group>"; };
 		3D41A51D22E996B4002AB802 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3D41A51F22E9B8FF002AB802 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
-		3D41A52222E9CB51002AB802 /* CountdownViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewPresenter.swift; sourceTree = "<group>"; };
+		3D41A52222E9CB51002AB802 /* CountdownPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownPresenter.swift; sourceTree = "<group>"; };
 		3D41A52422E9CC91002AB802 /* CompleteTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskPresenter.swift; sourceTree = "<group>"; };
 		3D41A52A22EAD7DC002AB802 /* CompleteTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskTableViewCell.swift; sourceTree = "<group>"; };
 		3D41A52B22EAD7DC002AB802 /* CompleteTaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteTaskTableViewCell.xib; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		3D41A51722E99110002AB802 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				3D41A51822E99509002AB802 /* TopViewPresenter.swift */,
-				3D41A52222E9CB51002AB802 /* CountdownViewPresenter.swift */,
+				3D41A51822E99509002AB802 /* TopPresenter.swift */,
+				3D41A52222E9CB51002AB802 /* CountdownPresenter.swift */,
 				3D41A52422E9CC91002AB802 /* CompleteTaskPresenter.swift */,
 			);
 			path = Presenter;
@@ -342,8 +342,8 @@
 				3D41A50822E975BA002AB802 /* VibrationService.swift in Sources */,
 				3D6BA9E622E71F33006537EF /* CountdownViewController.swift in Sources */,
 				3D41A52C22EAD7DC002AB802 /* CompleteTaskTableViewCell.swift in Sources */,
-				3D41A51922E99509002AB802 /* TopViewPresenter.swift in Sources */,
-				3D41A52322E9CB51002AB802 /* CountdownViewPresenter.swift in Sources */,
+				3D41A51922E99509002AB802 /* TopPresenter.swift in Sources */,
+				3D41A52322E9CB51002AB802 /* CountdownPresenter.swift in Sources */,
 				3D6BA9E422E71F33006537EF /* AppDelegate.swift in Sources */,
 				3D41A52022E9B8FF002AB802 /* TaskModel.swift in Sources */,
 				3DC5399723BF42E500BB46DA /* UIFeedbackService.swift in Sources */,

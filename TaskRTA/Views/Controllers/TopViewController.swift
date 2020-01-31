@@ -2,7 +2,7 @@
 //  TopViewController.swift
 //  TaskRTA
 //
-//  Created by Mercury on 2019/07/23.
+//  Created by Atsushi Otsubo on 2019/07/23.
 //  Copyright © 2019 Rirex. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ class TopViewController: CommonViewController {
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var countdownDatePicker: UIDatePicker!
     @IBOutlet weak var finishTimeLabel: UILabel!
-    fileprivate let presenter = TopViewPresenter()
+    fileprivate let presenter = TopPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
