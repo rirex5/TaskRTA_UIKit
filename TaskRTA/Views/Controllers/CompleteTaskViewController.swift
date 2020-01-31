@@ -11,57 +11,40 @@ import UIKit
 class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var completeTaskTableView: UITableView!
-    let viewModel = CompleteTaskViewModel()
-    var tasks: [[Task]] = [[]]
+    let presenter = CompleteTaskPresenter()
     
     override func viewWillAppear(_ animated: Bool) {
         initialization()
+        presenter.attachView(self)
         completeTaskTableView.reloadData()
     }
     
     func initialization() {
-        let taskAll = viewModel.readAll()
-        tasks = [[]]
-        var previousTask: Task?
-        var j = 0
-        for (i, task) in taskAll.enumerated() {
-            if (i == 0) {
-                tasks[j].append(task)
-            } else {
-                if (task.finishDate!.toStringOnlyDate() != previousTask?.finishDate!.toStringOnlyDate()) {
-                    tasks.append([])
-                    j += 1
-                }
-                tasks[j].insert(task, at: 0)
-            }
-            previousTask = task
-        }
-        tasks.reverse()
         completeTaskTableView.register(UINib(nibName: "CompleteTaskTableViewCell", bundle: nil), forCellReuseIdentifier: "CompleteTaskTableViewCell")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return tasks.count
+        return presenter.tasks.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if tasks[section].count != 0 {
-            let finishDate = tasks[section][0].finishDate!.toStringOnlyDate()
+        if presenter.tasks[section].count != 0 {
+            let finishDate = presenter.tasks[section][0].finishDate?.toStringOnlyDate()
             return finishDate
         }
         return ""
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks[section].count
+        return presenter.tasks[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CompleteTaskTableViewCell") as! CompleteTaskTableViewCell
-        let taskName = tasks[indexPath.section][indexPath.row].name
-        let progressPercent = tasks[indexPath.section][indexPath.row].progress * 100.0
-        let startDate = tasks[indexPath.section][indexPath.row].startDate
-        let finishDate = tasks[indexPath.section][indexPath.row].finishDate
+        let taskName = presenter.tasks[indexPath.section][indexPath.row].name
+        let progressPercent = presenter.tasks[indexPath.section][indexPath.row].progress * 100.0
+        let startDate = presenter.tasks[indexPath.section][indexPath.row].startDate
+        let finishDate = presenter.tasks[indexPath.section][indexPath.row].finishDate
         
         cell.taskNameLabel.text = taskName
         
@@ -87,15 +70,16 @@ class CompleteTaskViewController: UIViewController, UITableViewDelegate, UITable
     //スワイプしたセルを削除
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            let task = tasks[indexPath.section][indexPath.row]
-            viewModel.delete(task: task)
-            tasks[indexPath.section].remove(at: indexPath.row)
+            let task = presenter.tasks[indexPath.section][indexPath.row]
+            presenter.delete(task: task)
+            presenter.tasks[indexPath.section].remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
         }
     }
     
-
 }
+
+extension CompleteTaskViewController: CompleteTaskView { }
 
 extension Date {
     func toStringOnlyDate() -> String {

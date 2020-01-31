@@ -8,18 +8,17 @@
 
 import UIKit
 
-class TopViewController: UIViewController, UITextFieldDelegate {
+class TopViewController: CommonViewController {
     
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var countdownDatePicker: UIDatePicker!
     @IBOutlet weak var finishTimeLabel: UILabel!
-    
-    let viewModel = TopViewModel()
-    let uiFeedBack = UIFeedbackService.shared
+    fileprivate let presenter = TopViewPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialization()
+        presenter.attachView(self)
     }
     
     func initialization() {
@@ -32,9 +31,6 @@ class TopViewController: UIViewController, UITextFieldDelegate {
         ]
         taskNameTextField.delegate = self
         taskNameTextField.becomeFirstResponder() // キーボードを開く
-        if (viewModel.readRunningTask() != nil) {
-            showCountdownView()
-        }
     }
     
     @IBAction func countdownDatePickerChanged(_ sender: Any) {
@@ -44,53 +40,43 @@ class TopViewController: UIViewController, UITextFieldDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         finishTimeLabel.text = formatter.string(from: date)
-        print(date)
     }
     
     @IBAction func startButtonTouchDown(_ sender: Any) {
-        uiFeedBack.impact(style: .medium)
+        presenter.uiFeedBack.impact(style: .medium)
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
-        uiFeedBack.impact(style: .light)
+        presenter.uiFeedBack.impact(style: .light)
         if taskNameTextField.text != "" {
-            makeTask()
-            showCountdownView()
+            let taskName = taskNameTextField.text!
+            let timeMinutes = countdownDatePicker.countDownDuration
+            let targetDate = Date(timeInterval: timeMinutes, since: Date())
+            presenter.makeTask(taskName: taskName, targetDate: targetDate)
         } else {
             showAlart(title: "Please enter task name", message: "")
         }
     }
-    
-    func makeTask() {
-        let taskName = taskNameTextField.text!
-        let timeMinutes = countdownDatePicker.countDownDuration
-        let now = Date()
-        let targetDate = Date(timeInterval: timeMinutes, since: now)
-        let task = Task(name: taskName, progress: 0, startDate: now, targetDate: targetDate, finishDate: nil)
-        viewModel.save(task: task)
-    }
-    
-    func showCountdownView() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let countdownViewController = storyboard.instantiateViewController(withIdentifier: "CountdownView") as! CountdownViewController
-        self.parent?.navigationController?.show(countdownViewController, sender: nil)
-    }
-    
-    func showAlart(title: String, message: String) {
-        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle:  UIAlertController.Style.alert)
-        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
-        alert.addAction(defaultAction)
-        present(alert, animated: true, completion: nil)
-    }
+}
+
+extension TopViewController: UITextFieldDelegate {
     
     // To close keyboard by enter button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
     // To close keyboard by tap
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+}
+
+extension TopViewController: TopView {
+    func showCountdownView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let countdownViewController = storyboard.instantiateViewController(withIdentifier: "CountdownView") as! CountdownViewController
+        self.parent?.navigationController?.show(countdownViewController, sender: nil)
     }
 }

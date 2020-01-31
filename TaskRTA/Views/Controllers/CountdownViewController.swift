@@ -9,39 +9,25 @@
 import UIKit
 import Charts
 
-class CountdownViewController: UIViewController {
+class CountdownViewController: CommonViewController {
     
     @IBOutlet weak var countdownPieChartView: PieChartView!
     @IBOutlet weak var taskNameLabel: UILabel!
-    
     @IBOutlet weak var progressSlider: UISlider!
     @IBOutlet weak var progressRateLabel: UILabel!
     
-    var task: Task!
-    var countdownTimer: Timer!
-    let viewModel = CountdownViewModel()
-    var touchProgressSliderFlag = false
+    let presenter = CountdownPresenter()
     let uiFeedBack = UIFeedbackService.shared
+    var touchProgressSliderFlag = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialization()
+        presenter.attachView(self)
     }
     
     func initialization() {
-        // RealmDBからTask情報を読み込み
-        if let runningTask = viewModel.readRunningTask() {
-            task = runningTask
-            print(runningTask)
-        } else {
-            showAlart(title: "Sorry...", message: "Please re-install this app. DB schema was changed.")
-            return
-        }
-        // 初期化
         self.navigationItem.hidesBackButton = true
-        taskNameLabel.text = task.name
-        updateCountdownTime()
-        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CountdownViewController.timerUpdate), userInfo: nil, repeats: true)
         countdownPieChartView.usePercentValuesEnabled = false
         countdownPieChartView.drawSlicesUnderHoleEnabled = false
         countdownPieChartView.holeRadiusPercent = 0.6
@@ -56,14 +42,6 @@ class CountdownViewController: UIViewController {
         countdownPieChartView.holeColor = .white
     }
     
-    @objc func timerUpdate() {
-        updateCountdownTime()
-        let now = Date()
-        if Int(now.timeIntervalSince1970) - 1 == Int(task.targetDate.timeIntervalSince1970) {
-            VibrationService.shared.startVibrate(times: 5)
-        }
-    }
-    
     @IBAction func progressSliderChanged(_ sender: UISlider) {
         touchProgressSliderFlag = true
         let progress = Int(sender.value * 100)
@@ -76,13 +54,22 @@ class CountdownViewController: UIViewController {
     
     @IBAction func finishButtonTapped(_ sender: Any) {
         uiFeedBack.impact(style: .light)
-        taskFinish()
+        presenter.taskFinish(progress: progressSlider.value)
+        navigationController?.popViewController(animated: true)
     }
     
-    func updateCountdownTime() {
+}
+
+extension CountdownViewController: CountdownView {
+    
+    func setTaskName(_ name: String) {
+        taskNameLabel.text = name
+    }
+    
+    func updateCountdownTime(startDate: Date, targetDate: Date) {
         // 各時刻の算出
         let now = Date()
-        let countdownTime = Int(ceil(task.targetDate.timeIntervalSince(now)))
+        let countdownTime = Int(ceil(targetDate.timeIntervalSince(now)))
         let unsignedCountdownTime = abs(countdownTime)
         let cd_hour = Int(floor(Double(unsignedCountdownTime) / 3600.0))
         let cd_minute = Int(floor(Double(unsignedCountdownTime % 3600) / 60.0))
@@ -95,7 +82,7 @@ class CountdownViewController: UIViewController {
             countdownTimeStr = String(format: "%02d:%02d:%02d", cd_hour, cd_minute, cd_second)
         }
         
-        let countupTime = now.timeIntervalSince(task.startDate)
+        let countupTime = now.timeIntervalSince(startDate)
         let cu_hour = Int(floor(countupTime / 3600.0))
         let cu_minute = Int(floor(Double(Int(countupTime) % 3600 / 60)))
         let cu_second = Int(countupTime) % 60
@@ -107,7 +94,7 @@ class CountdownViewController: UIViewController {
         }
         
         // グラフ関連
-        var value = countupTime * 100.0 / task.targetDate.timeIntervalSince(task.startDate)
+        var value = countupTime * 100.0 / targetDate.timeIntervalSince(startDate)
         var cdTextColor = UIColor.darkGray // 基本カラー
         var cdFontSize = 24
         if (cd_hour == 0) {
@@ -148,25 +135,5 @@ class CountdownViewController: UIViewController {
             progressRateLabel.text = "Progress \(Int(value)) %"
         }
     }
-    
-    func taskFinish() {
-        let soundService = VibrationService.shared
-        soundService.stopVibrate()
-        countdownTimer.invalidate()
-        let progress = progressSlider.value
-        let now = Date()
-        task.progress = progress
-        task.finishDate = now
-        viewModel.update(task: task)
-        navigationController?.popViewController(animated: true)
-    }
-    
-    func showAlart(title: String, message: String) {
-        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle:  UIAlertController.Style.alert)
-        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
-        alert.addAction(defaultAction)
-        present(alert, animated: true, completion: nil)
-    }
-    
 }
 
