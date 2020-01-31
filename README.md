@@ -12,15 +12,11 @@ Language:
 - Swift 5
 
 Architecture:
-- like MVVM 
+- Model-View-Presenter (MVP) 
 
 Using Library: 
 - Realm Swift
 - Charts
-
-※You can install this library by the cocoapods.
-
-
 
 
 # Setup
