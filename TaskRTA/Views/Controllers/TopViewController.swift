@@ -54,7 +54,7 @@ class TopViewController: CommonViewController {
             let targetDate = Date(timeInterval: timeMinutes, since: Date())
             presenter.makeTask(taskName: taskName, targetDate: targetDate)
         } else {
-            showAlart(title: "Please enter task name", message: "")
+            showAlart(title: "Please enter task name".localized, message: "")
         }
     }
 }

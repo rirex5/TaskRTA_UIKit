@@ -45,7 +45,7 @@ class CountdownViewController: CommonViewController {
     @IBAction func progressSliderChanged(_ sender: UISlider) {
         touchProgressSliderFlag = true
         let progress = Int(sender.value * 100)
-        progressRateLabel.text = "Progress \(progress) %"
+        progressRateLabel.text = "Progress".localized + ": \(progress) %"
     }
     
     @IBAction func finishButtonTouchDown(_ sender: Any) {
@@ -132,7 +132,7 @@ extension CountdownViewController: CountdownView {
         countdownPieChartView.centerAttributedText = centerText
         if (touchProgressSliderFlag != true) {
             progressSlider.value = Float(value / 100.0)
-            progressRateLabel.text = "Progress \(Int(value)) %"
+            progressRateLabel.text = "Progress".localized + ": \(Int(value)) %"
         }
     }
 }

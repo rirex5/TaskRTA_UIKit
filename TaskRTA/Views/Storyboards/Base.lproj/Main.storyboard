@@ -132,7 +132,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U59-rV-kvv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Completed Tasks" image="Tasks-32.png" id="TpV-w9-E0v"/>
+                    <tabBarItem key="tabBarItem" title="History" image="Tasks-32.png" id="TpV-w9-E0v"/>
                     <connections>
                         <outlet property="completeTaskTableView" destination="Vxi-z0-GdQ" id="eaq-ea-bLp"/>
                     </connections>

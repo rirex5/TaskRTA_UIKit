@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  TaskRTA
+
+  Created by Atsushi Otsubo on 2020/02/03.
+  Copyright © 2020 Rirex. All rights reserved.
+*/
+"Please enter task name" = "タスク名を入力してください";
+"Progress" = "進捗";

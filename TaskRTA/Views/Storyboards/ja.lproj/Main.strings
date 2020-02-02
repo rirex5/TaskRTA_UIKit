@@ -1,0 +1,39 @@
+
+/* Class = "UITextField"; placeholder = "Input here"; ObjectID = "3BT-xv-PyA"; */
+"3BT-xv-PyA.placeholder" = "Input here";
+
+/* Class = "UIButton"; normalTitle = "START"; ObjectID = "8dZ-E5-LvR"; */
+"8dZ-E5-LvR.normalTitle" = "START";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "96I-lr-wcb"; */
+"96I-lr-wcb.text" = "-";
+
+/* Class = "UILabel"; text = "Progress 0 %"; ObjectID = "9H1-Io-83x"; */
+"9H1-Io-83x.text" = "Progress 0 %";
+
+/* Class = "UITabBarItem"; title = "Real Time Attack"; ObjectID = "ItT-u4-wfo"; */
+"ItT-u4-wfo.title" = "Real Time Attack";
+
+/* Class = "UIButton"; normalTitle = "FINISH"; ObjectID = "PDr-wV-lj8"; */
+"PDr-wV-lj8.normalTitle" = "FINISH";
+
+/* Class = "UINavigationItem"; title = "TaskRTA"; ObjectID = "RxS-t2-PQ6"; */
+"RxS-t2-PQ6.title" = "TaskRTA";
+
+/* Class = "UITabBarItem"; title = "Completed Tasks"; ObjectID = "TpV-w9-E0v"; */
+"TpV-w9-E0v.title" = "History";
+
+/* Class = "UILabel"; text = "Finish Time"; ObjectID = "XTm-Ox-gDA"; */
+"XTm-Ox-gDA.text" = "終了予定時刻";
+
+/* Class = "UINavigationItem"; title = "TaskRTA"; ObjectID = "bdE-99-MNc"; */
+"bdE-99-MNc.title" = "TaskRTA";
+
+/* Class = "UILabel"; text = "TaskName"; ObjectID = "cOL-mp-WG7"; */
+"cOL-mp-WG7.text" = "TaskName";
+
+/* Class = "UILabel"; text = "Task Name"; ObjectID = "qyE-cu-I6h"; */
+"qyE-cu-I6h.text" = "タスク名";
+
+/* Class = "UILabel"; text = "Target Time"; ObjectID = "tgz-w1-coX"; */
+"tgz-w1-coX.text" = "目標時間";
