@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NQK-r7-rOh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NQK-r7-rOh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,19 +26,12 @@
                                 <state key="normal" title="FINISH">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="finishButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OrJ-qQ-LLG"/>
-                                    <action selector="finishButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="sA0-Sw-qbX"/>
-                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bi5-B5-XeY">
                                 <rect key="frame" x="40" y="708.5" width="334" height="63.5"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-4V-fba">
                                         <rect key="frame" x="-2" y="0.0" width="338" height="31"/>
-                                        <connections>
-                                            <action selector="progressSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cE5-uH-lvj"/>
-                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress 0 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H1-Io-83x">
                                         <rect key="frame" x="0.0" y="40" width="334" height="23.5"/>
@@ -81,6 +74,7 @@
                     <navigationItem key="navigationItem" title="TaskRTA" id="bdE-99-MNc"/>
                     <connections>
                         <outlet property="countdownPieChartView" destination="n8Q-Ni-wnY" id="6Ui-En-Dep"/>
+                        <outlet property="finishButton" destination="PDr-wV-lj8" id="CaO-A8-jo2"/>
                         <outlet property="progressRateLabel" destination="9H1-Io-83x" id="bGl-yK-mxM"/>
                         <outlet property="progressSlider" destination="z3c-4V-fba" id="8SO-qk-n7a"/>
                         <outlet property="taskNameLabel" destination="cOL-mp-WG7" id="m8I-Sj-0zQ"/>
@@ -159,16 +153,12 @@
                                 <state key="normal" title="START">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="startButtonTapped:" destination="Zx9-zt-hVW" eventType="touchUpInside" id="pwP-RV-YaB"/>
-                                    <action selector="startButtonTouchDown:" destination="Zx9-zt-hVW" eventType="touchDown" id="V1R-th-xoi"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIy-OP-hVc">
                                 <rect key="frame" x="0.0" y="88" width="414" height="655"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dxw-PJ-Gly">
-                                        <rect key="frame" x="20" y="111.5" width="374" height="432"/>
+                                        <rect key="frame" x="20" y="111" width="374" height="433.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyE-cu-I6h">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="26"/>
@@ -177,30 +167,27 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input here" textAlignment="center" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3BT-xv-PyA">
-                                                <rect key="frame" x="0.0" y="41" width="374" height="34"/>
+                                                <rect key="frame" x="0.0" y="41" width="374" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgz-w1-coX">
-                                                <rect key="frame" x="0.0" y="90" width="374" height="26"/>
+                                                <rect key="frame" x="0.0" y="91.5" width="374" height="26"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzX-2X-5Nr">
-                                                <rect key="frame" x="0.0" y="131" width="374" height="216"/>
-                                                <connections>
-                                                    <action selector="countdownDatePickerChanged:" destination="Zx9-zt-hVW" eventType="valueChanged" id="lk1-4j-bGJ"/>
-                                                </connections>
+                                                <rect key="frame" x="0.0" y="132.5" width="374" height="216"/>
                                             </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finish Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTm-Ox-gDA">
-                                                <rect key="frame" x="0.0" y="362" width="374" height="26"/>
+                                                <rect key="frame" x="0.0" y="363.5" width="374" height="26"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96I-lr-wcb">
-                                                <rect key="frame" x="0.0" y="403" width="374" height="29"/>
+                                                <rect key="frame" x="0.0" y="404.5" width="374" height="29"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -234,6 +221,7 @@
                     <connections>
                         <outlet property="countdownDatePicker" destination="AzX-2X-5Nr" id="OkQ-vB-81C"/>
                         <outlet property="finishTimeLabel" destination="96I-lr-wcb" id="3xd-rc-1u8"/>
+                        <outlet property="startButton" destination="8dZ-E5-LvR" id="W88-4j-o2v"/>
                         <outlet property="taskNameTextField" destination="3BT-xv-PyA" id="di8-kC-bhZ"/>
                     </connections>
                 </viewController>
