@@ -6,6 +6,9 @@
 //  Copyright © 2019 Rirex. All rights reserved.
 //
 
+
+import RxCocoa
+import RxSwift
 import UIKit
 import Charts
 
@@ -15,15 +18,18 @@ class CountdownViewController: CommonViewController {
     @IBOutlet weak var taskNameLabel: UILabel!
     @IBOutlet weak var progressSlider: UISlider!
     @IBOutlet weak var progressRateLabel: UILabel!
+    @IBOutlet weak var finishButton: UIButton!
+    
     
     let presenter = CountdownPresenter()
     let uiFeedBack = UIFeedbackService.shared
-    var touchProgressSliderFlag = false
+    let disposeBag = DisposeBag()
+    var touchProgressSliderFlag = BehaviorRelay<Bool>(value: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialization()
-        presenter.attachView(self)
+        ignitionStream()
     }
     
     func initialization() {
@@ -40,24 +46,41 @@ class CountdownViewController: CommonViewController {
         countdownPieChartView.highlightPerTapEnabled = false
         countdownPieChartView.legend.enabled = false
         countdownPieChartView.holeColor = .white
+        presenter.attachView(self)
     }
     
-    @IBAction func progressSliderChanged(_ sender: UISlider) {
-        touchProgressSliderFlag = true
-        let progress = Int(sender.value * 100)
-        progressRateLabel.text = "Progress".localized + ": \(progress) %"
+    func ignitionStream() {
+        // Stream
+        let finishButtonTouchDown = finishButton.rx.controlEvent(.touchDown)
+        let finishButtonTapped = finishButton.rx.tap
+        let progressSliderChanged = progressSlider.rx.controlEvent(.valueChanged)
+        let progressValue = progressSlider.rx.value
+        
+        // UI
+        finishButtonTouchDown
+            .subscribe(onNext: { [weak self] _ in
+                self?.uiFeedBack.impact(style: .medium)
+            }).disposed(by: disposeBag)
+        
+        finishButtonTapped.withLatestFrom(progressValue)
+            .map { $0
+        }
+        .subscribe({ [weak self] value in
+            self?.uiFeedBack.impact(style: .light)
+            self?.presenter.taskFinish(progress: value.element!)
+            self?.navigationController?.popViewController(animated: true)
+        })
+            .disposed(by: disposeBag)
+        
+        progressSliderChanged.withLatestFrom(progressValue)
+            .map { Int(round($0 * 100))
+        }.do(onNext: { [weak self] _ in
+            self?.touchProgressSliderFlag.accept(true)
+        })
+            .map { "Progress".localized + ": \($0) %" }
+            .bind(to: progressRateLabel.rx.text)
+            .disposed(by: disposeBag)
     }
-    
-    @IBAction func finishButtonTouchDown(_ sender: Any) {
-        uiFeedBack.impact(style: .medium)
-    }
-    
-    @IBAction func finishButtonTapped(_ sender: Any) {
-        uiFeedBack.impact(style: .light)
-        presenter.taskFinish(progress: progressSlider.value)
-        navigationController?.popViewController(animated: true)
-    }
-    
 }
 
 extension CountdownViewController: CountdownView {
@@ -130,7 +153,7 @@ extension CountdownViewController: CountdownView {
             .paragraphStyle : paragraphStyle], range: NSRange(location: countdownTimeStr.count, length: countupTimeStr.count + 1
         ))
         countdownPieChartView.centerAttributedText = centerText
-        if (touchProgressSliderFlag != true) {
+        if (touchProgressSliderFlag.value != true) {
             progressSlider.value = Float(value / 100.0)
             progressRateLabel.text = "Progress".localized + ": \(Int(value)) %"
         }

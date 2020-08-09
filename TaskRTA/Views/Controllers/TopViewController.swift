@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class TopViewController: CommonViewController {
     
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var countdownDatePicker: UIDatePicker!
     @IBOutlet weak var finishTimeLabel: UILabel!
-    fileprivate let presenter = TopPresenter()
+    @IBOutlet weak var startButton: UIButton!
+    
+    private let presenter = TopPresenter()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialization()
-        presenter.attachView(self)
+        ignitionStream()
     }
     
     func initialization() {
@@ -31,36 +36,50 @@ class TopViewController: CommonViewController {
         ]
         taskNameTextField.delegate = self
         taskNameTextField.becomeFirstResponder() // キーボードを開く
+        presenter.attachView(self)
     }
     
-    @IBAction func countdownDatePickerChanged(_ sender: Any) {
-        var date = Date()
-        let timeInterval = countdownDatePicker.countDownDuration
-        date.addTimeInterval(timeInterval)
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        finishTimeLabel.text = formatter.string(from: date)
-    }
-    
-    @IBAction func startButtonTouchDown(_ sender: Any) {
-        presenter.uiFeedBack.impact(style: .medium)
-    }
-    
-    @IBAction func startButtonTapped(_ sender: Any) {
-        presenter.uiFeedBack.impact(style: .light)
-        if taskNameTextField.text != "" {
-            let taskName = taskNameTextField.text!
-            let timeMinutes = countdownDatePicker.countDownDuration
-            let targetDate = Date(timeInterval: timeMinutes, since: Date())
-            presenter.makeTask(taskName: taskName, targetDate: targetDate)
-        } else {
-            showAlart(title: "Please enter task name".localized, message: "")
+    func ignitionStream() {
+        
+        // Stream
+        let remainingTime = countdownDatePicker.rx.countDownDuration
+            .map { countDownDuration  -> String in
+                var date = Date()
+                let timeInterval: TimeInterval = countDownDuration
+                date.addTimeInterval(timeInterval)
+                let formatter = DateFormatter()
+                formatter.dateFormat = "HH:mm"
+                return formatter.string(from: date)
         }
+        let startButtonTouchDown = startButton.rx.controlEvent(.touchDown)
+        let startButtonTapped = startButton.rx.tap
+        
+        // UI
+        remainingTime.bind(to: finishTimeLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        startButtonTouchDown.subscribe(onNext: { [weak self] _ in
+            self?.presenter.uiFeedBack.impact(style: .medium)
+            }).disposed(by: disposeBag)
+        
+        startButtonTapped.subscribe(onNext: { [weak self] _ in
+            self?.presenter.uiFeedBack.impact(style: .light)
+            if self?.taskNameTextField.text != "" {
+                guard let taskName = self?.taskNameTextField.text else { return }
+                guard let timeMinutes = self?.countdownDatePicker.countDownDuration else { return }
+                let targetDate = Date(timeInterval: timeMinutes, since: Date())
+                self?.presenter.makeTask(taskName: taskName, targetDate: targetDate)
+            } else {
+                self?.showAlart(title: "Please enter task name".localized, message: "")
+            }
+        }).disposed(by: disposeBag)
+        
+        
+        
     }
 }
 
 extension TopViewController: UITextFieldDelegate {
-    
     // To close keyboard by enter button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -70,7 +89,6 @@ extension TopViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
 }
 
 extension TopViewController: TopView {
