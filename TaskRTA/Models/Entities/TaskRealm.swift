@@ -6,15 +6,16 @@
 //  Copyright © 2019 Rirex. All rights reserved.
 //
 
+import Foundation
 import RealmSwift
 
 class TaskRealm: Object {
-    @objc dynamic var uuid: String = ""
-    @objc dynamic var taskName: String = ""
-    @objc dynamic var progress: Float = -1
-    @objc dynamic var startDate: Date = Date(timeIntervalSince1970: 0)
-    @objc dynamic var targetDate: Date = Date(timeIntervalSince1970: 0)
-    @objc dynamic var finishDate: Date?
+    dynamic var uuid: String = ""
+    dynamic var taskName: String = ""
+    dynamic var progress: Float = -1
+    dynamic var startDate: Date = Date(timeIntervalSince1970: 0)
+    dynamic var targetDate: Date = Date(timeIntervalSince1970: 0)
+    dynamic var finishDate: Date?
     
     override static func primaryKey() -> String? {
         return "uuid"

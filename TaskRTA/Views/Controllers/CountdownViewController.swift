@@ -32,9 +32,9 @@ class CountdownViewController: CommonViewController {
         countdownPieChartView.drawSlicesUnderHoleEnabled = false
         countdownPieChartView.holeRadiusPercent = 0.6
         countdownPieChartView.transparentCircleRadiusPercent = 0.1
-        countdownPieChartView.chartDescription?.enabled = false
+        countdownPieChartView.chartDescription.enabled = false
         countdownPieChartView.setExtraOffsets(left: 0, top: 0, right: 0, bottom: 0)
-        countdownPieChartView.chartDescription?.enabled = false
+        countdownPieChartView.chartDescription.enabled = false
         countdownPieChartView.rotationAngle = -90
         countdownPieChartView.rotationEnabled = false
         countdownPieChartView.highlightPerTapEnabled = false
