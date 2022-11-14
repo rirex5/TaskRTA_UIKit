@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class TaskModel: Object {
+class TaskModel {
     
     var tasksResults: Results<TaskRealm>!
     // Save

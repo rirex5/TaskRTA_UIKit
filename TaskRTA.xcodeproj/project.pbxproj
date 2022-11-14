@@ -29,7 +29,7 @@
 		3DB8C4EB22E72BEB0042DCC8 /* CompleteTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB8C4EA22E72BEB0042DCC8 /* CompleteTaskViewController.swift */; };
 		3DC5399723BF42E500BB46DA /* UIFeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC5399623BF42E500BB46DA /* UIFeedbackService.swift */; };
 		3DCCC46C2303E46400008C83 /* Tasks-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DCCC46B2303E46400008C83 /* Tasks-32.png */; };
-		6E1AA5E69C4BEAB66E751F62 /* Pods_toDO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580C5BB65CCAEF7F00B7E7D3 /* Pods_toDO.framework */; };
+		525A7E20AA543138B2B5A954 /* Pods_TaskRTA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBDE43649827D949C5FD367 /* Pods_TaskRTA.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +59,9 @@
 		3DB8C4EA22E72BEB0042DCC8 /* CompleteTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskViewController.swift; sourceTree = "<group>"; };
 		3DC5399623BF42E500BB46DA /* UIFeedbackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFeedbackService.swift; sourceTree = "<group>"; };
 		3DCCC46B2303E46400008C83 /* Tasks-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tasks-32.png"; sourceTree = "<group>"; };
-		580C5BB65CCAEF7F00B7E7D3 /* Pods_toDO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toDO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59327C89BA507F292DCC6F9A /* Pods-TaskRTA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskRTA.debug.xcconfig"; path = "Target Support Files/Pods-TaskRTA/Pods-TaskRTA.debug.xcconfig"; sourceTree = "<group>"; };
+		6EBDE43649827D949C5FD367 /* Pods_TaskRTA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskRTA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D3E62CFDF31A4EF568E8DD7 /* Pods-TaskRTA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskRTA.release.xcconfig"; path = "Target Support Files/Pods-TaskRTA/Pods-TaskRTA.release.xcconfig"; sourceTree = "<group>"; };
 		EB2B1C51B47945F02BEF6C4A /* Pods-toDO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toDO.debug.xcconfig"; path = "Target Support Files/Pods-toDO/Pods-toDO.debug.xcconfig"; sourceTree = "<group>"; };
 		FCDC5887D5439CC182A3C073 /* Pods-toDO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toDO.release.xcconfig"; path = "Target Support Files/Pods-toDO/Pods-toDO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1AA5E69C4BEAB66E751F62 /* Pods_toDO.framework in Frameworks */,
+				525A7E20AA543138B2B5A954 /* Pods_TaskRTA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +219,8 @@
 			children = (
 				EB2B1C51B47945F02BEF6C4A /* Pods-toDO.debug.xcconfig */,
 				FCDC5887D5439CC182A3C073 /* Pods-toDO.release.xcconfig */,
+				59327C89BA507F292DCC6F9A /* Pods-TaskRTA.debug.xcconfig */,
+				7D3E62CFDF31A4EF568E8DD7 /* Pods-TaskRTA.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -224,7 +228,7 @@
 		B56A5511851E45928B712C12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				580C5BB65CCAEF7F00B7E7D3 /* Pods_toDO.framework */,
+				6EBDE43649827D949C5FD367 /* Pods_TaskRTA.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,15 +318,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-toDO/Pods-toDO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-TaskRTA/Pods-TaskRTA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-toDO/Pods-toDO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-TaskRTA/Pods-TaskRTA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-toDO/Pods-toDO-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaskRTA/Pods-TaskRTA-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		ED79F0339E07CB20D46C282A /* [CP] Check Pods Manifest.lock */ = {
@@ -340,7 +344,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-toDO-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TaskRTA-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -524,10 +528,10 @@
 		};
 		3D6BA9F322E71F36006537EF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB2B1C51B47945F02BEF6C4A /* Pods-toDO.debug.xcconfig */;
+			baseConfigurationReference = 59327C89BA507F292DCC6F9A /* Pods-TaskRTA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = W9QV9753NK;
 				INFOPLIST_FILE = TaskRTA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -537,6 +541,7 @@
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = net.rirex.TaskRTA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "TaskRTA Dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -544,7 +549,7 @@
 		};
 		3D6BA9F422E71F36006537EF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCDC5887D5439CC182A3C073 /* Pods-toDO.release.xcconfig */;
+			baseConfigurationReference = 7D3E62CFDF31A4EF568E8DD7 /* Pods-TaskRTA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
